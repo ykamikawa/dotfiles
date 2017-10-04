@@ -90,6 +90,7 @@ hook_add='''
 " ツリーと編集領域を移動する
 nmap <Leader><Tab> <C-w>w
 '''
+
 [[plugins]]
 repo='jistr/vim-nerdtree-tabs'
 hook_add='''
@@ -98,8 +99,10 @@ if argc()==0
   let g:nerdtree_tabs_open_on_console_startup = 1
 end
 '''
+
 [[plugins]]
 repo='Xuyuanp/nerdtree-git-plugin'
+
 [[plugins]]
 repo='airblade/vim-gitgutter'
 
