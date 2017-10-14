@@ -170,6 +170,7 @@ repo='tpope/vim-fugitive'
 repo='vim-airline/vim-airline'
 hook_add='''
 " Powerline系フォントを利用する
+set laststatus=2
 let g:airline_powerline_fonts = 1
 " タブバーのカスタマイズを有効にする
 let g:airline#extensions#tabline#enabled = 1
@@ -182,5 +183,6 @@ let g:airline#extensions#tabline#show_close_button = 1
 repo='vim-airline/vim-airline-themes'
 depends='vim-airline'
 hook_add='''
-let g:airline_theme='jellybeans'
+set ambiwidth=double
+let g:airline_theme='molokai'
 '''
