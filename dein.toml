@@ -73,6 +73,10 @@ repo='plasticboy/vim-markdown'
 [[plugins]]
 repo='kannokanno/previm'
 
+# latex
+[[plugins]]
+repo='lervag/vimtex'
+
 # evernote
 [[plugins]]
 repo = 'kakkyz81/evervim'
