@@ -81,9 +81,18 @@ repo = 'kakkyz81/evervim'
 [[plugins]]
 repo='tyru/open-browser.vim'
 
+# latex
+# setting later
+[[plugins]]
+repo='lervag/vimtex'
+
 # json
 [[plugins]]
 repo='elzr/vim-json'
+
+# csv
+[[plugins]]
+repo='chrisbra/csv.vim'
 
 # NERDTree
 [[plugins]]
