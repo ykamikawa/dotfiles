@@ -70,12 +70,14 @@ repo='gko/vim-coloresque'
 # markdown
 [[plugins]]
 repo='plasticboy/vim-markdown'
+
+# preview
 [[plugins]]
 repo='kannokanno/previm'
 
 # evernote
 [[plugins]]
-repo = 'kakkyz81/evervim'
+repo = 'LER0ever/EverVim'
 
 # browser
 [[plugins]]
