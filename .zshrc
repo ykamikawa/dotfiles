@@ -109,7 +109,6 @@ export PATH=$PYENVROOT/bin:$PATH
 # caffe2keras 動いてない
 export PYTHONPATH=$PYTHONPATH:$HOME/lab/workspace/gaze/caffe2keras
 # caffe
-export PYTHONPATH=$PYTHONPATH:$CAFFE_ROOT/python
 eval "$(pyenv init -)"
 
 # go
@@ -123,4 +122,5 @@ export XDG_CACHE_HOME=$HOME/.cache
 
 # caffe
 export CAFFE_ROOT=~/tutorial/python/caffe
+export PYTHONPATH=$PYTHONPATH:$CAFFE_ROOT/python
 export CPLUS_INCLUDE_PATH=$PYENVROOT/versions/anaconda-4.0.0/include/python2.7
