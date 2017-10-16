@@ -75,10 +75,6 @@ repo='plasticboy/vim-markdown'
 [[plugins]]
 repo='kannokanno/previm'
 
-# evernote
-[[plugins]]
-repo = 'LER0ever/EverVim'
-
 # browser
 [[plugins]]
 repo='tyru/open-browser.vim'
