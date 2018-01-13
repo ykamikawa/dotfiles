@@ -119,8 +119,3 @@ export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 # neovim
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
-
-# caffe
-export CAFFE_ROOT=~/tutorial/python/caffe
-export PYTHONPATH=$PYTHONPATH:$CAFFE_ROOT/python
-export CPLUS_INCLUDE_PATH=$PYENVROOT/versions/anaconda-4.0.0/include/python2.7
