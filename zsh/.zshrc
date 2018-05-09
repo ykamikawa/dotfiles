@@ -115,6 +115,7 @@ eval "$(pyenv init -)"
 export GOROOT=/usr/local/opt/go/libexec
 export GOPATH=$HOME/work/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+alias gobuild="go build -o"
 
 # neovim
 export XDG_CONFIG_HOME=$HOME/.config
