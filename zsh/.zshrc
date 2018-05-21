@@ -106,6 +106,7 @@ export BROWSER=/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
 # python
 export PYENVROOT=$HOME/.pyenv
 export PATH=$PYENVROOT/bin:$PATH
+eval "$(pyenv init -)"
 
 # go
 export GOROOT=/usr/local/opt/go/libexec
