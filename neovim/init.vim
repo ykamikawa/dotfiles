@@ -158,7 +158,7 @@ augroup END
 let s:cache_home=empty($XDG_CACHE_HOME) ? expand('~/.cache') : $XDG_CACHE_HOME
 let s:dein_dir=s:cache_home . '/dein'
 let s:dein_repo_dir=s:dein_dir . '/repos/github.com/Shougo/dein.vim'
-" dein.vimがなければ、dein.vim自体の自動インストール
+" dein.vimがなければ、dein.vim自体を自動インストール
 if !isdirectory(s:dein_repo_dir)
   call system('git clone https://github.com/Shougo/dein.vim ' . shellescape(s:dein_repo_dir))
 endif

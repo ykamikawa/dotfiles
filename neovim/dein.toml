@@ -110,9 +110,9 @@ if argc()==0
 end
 '''
 
+# git
 [[plugins]]
 repo='Xuyuanp/nerdtree-git-plugin'
-
 [[plugins]]
 repo='airblade/vim-gitgutter'
 
@@ -124,7 +124,7 @@ repo='bronson/vim-trailing-whitespace'
 [[plugins]]
 repo='Yggdroot/indentLine'
 
-#ソースコードを実行
+# ソースコードを実行
 [[plugins]]
 repo='thinca/vim-quickrun'
 
@@ -144,15 +144,16 @@ repo='tpope/vim-fugitive'
 [[plugins]]
 repo='Townk/vim-autoclose'
 
-# カーソル位置のコンテキストに合わせてftを切り替える
-[[plugins]]
-repo='osyo-manga/vim-precious'
-depends=['context_filetype.vim']
 # カーソル位置のコンテキストのftを判定するライブラリ
 [[plugins]]
 repo='Shougo/context_filetype.vim'
 
-#toml syntax
+# カーソル位置のコンテキストに合わせてfilettypeを切り替える
+[[plugins]]
+repo='osyo-manga/vim-precious'
+depends=['context_filetype.vim']
+
+# toml syntax
 [[plugins]]
 repo='cespare/vim-toml'
 on_ft='toml'
@@ -185,6 +186,7 @@ let g:airline#extensions#tabline#show_splits = 1
 let g:airline#extensions#tabline#show_tab_type = 1
 let g:airline#extensions#tabline#show_close_button = 1
 '''
+# airlineのカスタマイズ
 [[plugins]]
 repo='vim-airline/vim-airline-themes'
 depends='vim-airline'
