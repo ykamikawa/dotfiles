@@ -1,7 +1,7 @@
 " setting---------------------------------------------
 " 文字コードをUFT-8に設定
 set fenc=utf-8
-set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+set fileencodings=utf-8
 set fileformats=unix,dos,mac
 set ambiwidth=double
 
@@ -94,6 +94,11 @@ set hlsearch
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 " end setting----------------------------------------
+
+" texのconcealを無効
+let g:tex_conceal=''
+" markdownのconcealを無効
+let g:markdown_conceal=''
 
 
 " python---------------------------------------------
