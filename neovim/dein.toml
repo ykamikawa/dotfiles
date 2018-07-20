@@ -6,13 +6,10 @@ repo='Shougo/dein.vim'
 repo='Shougo/vimproc.vim'
 build='make'
 
-# 自動補完
 [[plugins]]
 repo='Shougo/deoplete.nvim'
 hook_add='''
 let g:deoplete#enable_at_startup = 1
-" tabで選択
-" <TAB>: complesion. tabで次を選択
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
@@ -21,12 +18,12 @@ function! s:check_back_space() abort "{{{
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~ '\s'
 endfunction"}}}
-" <S-TAB>: completion back. tab+shiftでback
+" <S-TAB>: completion back. tab+shift
 inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<C-h>"
-" <BS>: close popup and delete backword char. バックスペースでpopupを消す
+" <BS>: close popup and delete backword char.
 inoremap <expr><BS> deoplete#smart_close_popup()."\<C-h>"
 " Use auto delimiter
-call deoplete#custom#set('_', 'converters', [
+call deoplete#custom#source('_', 'converters', [
       \ 'converter_remove_paren',
       \ 'converter_remove_overlap',
       \ 'converter_truncate_abbr',
@@ -63,7 +60,6 @@ let g:user_emmet_leader_key='<C-e>'
 '''
 [[plugins]]
 repo='hail2u/vim-css3-syntax'
-# 16進数で色表示
 [[plugins]]
 repo='gko/vim-coloresque'
 
@@ -96,15 +92,11 @@ repo='chrisbra/csv.vim'
 [[plugins]]
 repo='scrooloose/nerdtree'
 hook_add='''
-" 不可視ファイルを表示する
-" let NERDTreeShowHidden = 1
-" ツリーと編集領域を移動する
 nmap <Leader><Tab> <C-w>w
 '''
 [[plugins]]
 repo='jistr/vim-nerdtree-tabs'
 hook_add='''
-" ファイルが指定されていなければNERD treeを有効にする
 if argc()==0
   let g:nerdtree_tabs_open_on_console_startup = 1
 end
@@ -116,19 +108,15 @@ repo='Xuyuanp/nerdtree-git-plugin'
 [[plugins]]
 repo='airblade/vim-gitgutter'
 
-# ファイル末尾の余分なスペースをハイライト
 [[plugins]]
 repo='bronson/vim-trailing-whitespace'
 
-# インデントの深さを可視化
 [[plugins]]
 repo='Yggdroot/indentLine'
 
-# ソースコードを実行
 [[plugins]]
 repo='thinca/vim-quickrun'
 
-# j,kの移動を早くする
 [[plugins]]
 repo='rhysd/accelerated-jk'
 hook_add='''
@@ -136,19 +124,15 @@ nmap j <Plug>(accelerated_jk_gj)
 nmap k <Plug>(accelerated_jk_gk)
 '''
 
-# ブランチ情報を表示
 [[plugins]]
 repo='tpope/vim-fugitive'
 
-# カッコ自動化
 [[plugins]]
 repo='Townk/vim-autoclose'
 
-# カーソル位置のコンテキストのftを判定するライブラリ
 [[plugins]]
 repo='Shougo/context_filetype.vim'
 
-# カーソル位置のコンテキストに合わせてfilettypeを切り替える
 [[plugins]]
 repo='osyo-manga/vim-precious'
 depends=['context_filetype.vim']
@@ -158,7 +142,6 @@ depends=['context_filetype.vim']
 repo='cespare/vim-toml'
 on_ft='toml'
 
-# カラースキーマ
 [[plugins]]
 repo='w0ng/vim-hybrid'
 hook_add='''
@@ -168,11 +151,9 @@ set background=dark
 au MyAutoCmd VimEnter * nested colorscheme hybrid
 '''
 
-# 変更ファイルの表示
 [[plugins]]
 repo='tpope/vim-fugitive'
 
-# ステータスバーのカスタマイズ
 [[plugins]]
 repo='vim-airline/vim-airline'
 hook_add='''
@@ -186,7 +167,6 @@ let g:airline#extensions#tabline#show_splits = 1
 let g:airline#extensions#tabline#show_tab_type = 1
 let g:airline#extensions#tabline#show_close_button = 1
 '''
-# airlineのカスタマイズ
 [[plugins]]
 repo='vim-airline/vim-airline-themes'
 depends='vim-airline'
