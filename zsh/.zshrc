@@ -104,8 +104,8 @@ alias vim='nvim'
 export BROWSER=/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
 
 # python
-export PYENVROOT=$HOME/.pyenv
-export PATH=$PYENVROOT/bin:$PATH
+export PYENV_ROOT=$HOME/.pyenv
+export PATH=$PYENV_ROOT/bin:$PATH
 eval "$(pyenv init -)"
 
 # go
