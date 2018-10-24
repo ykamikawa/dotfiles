@@ -117,3 +117,6 @@ alias gobuild="go build -o"
 # neovim
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
+
+# CUDA
+export PATH=/usr/local/cuda/bin:$PATH
