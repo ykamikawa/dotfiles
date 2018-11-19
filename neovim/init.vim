@@ -95,9 +95,28 @@ set hlsearch
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 " end setting----------------------------------------
 
-" texのconcealを無効
+" tex
+" concealを無効
 let g:tex_conceal=''
-" markdownのconcealを無効
+let g:vimtex_compiler_latexmk = {
+      \ 'background': 1,
+      \ 'build_dir': '',
+      \ 'continuous': 1,
+      \ 'options': [
+      \    '-pdfdvi',
+      \    '-verbose',
+      \    '-file-line-error',
+      \    '-synctex=1',
+      \    '-interaction=nonstopmode',
+      \],
+      \}
+
+let g:vimtex_view_general_viewer
+      \ = '/Applications/Skim.app/Contents/SharedSupport/displayline'
+let g:vimtex_view_general_options = '-r @line @pdf @tex'
+
+" markdown
+" concealを無効
 let g:markdown_conceal=''
 
 

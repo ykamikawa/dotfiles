@@ -76,9 +76,11 @@ repo='kannokanno/previm'
 repo='tyru/open-browser.vim'
 
 # latex
-# setting later
 [[plugins]]
 repo='lervag/vimtex'
+
+[[plugins]]
+repo='thinca/vim-quickrun'
 
 # json
 [[plugins]]
@@ -113,9 +115,6 @@ repo='bronson/vim-trailing-whitespace'
 
 [[plugins]]
 repo='Yggdroot/indentLine'
-
-[[plugins]]
-repo='thinca/vim-quickrun'
 
 [[plugins]]
 repo='rhysd/accelerated-jk'
