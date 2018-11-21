@@ -98,6 +98,9 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 " tex
 " concealを無効
 let g:tex_conceal=''
+let g:vimtex_view_general_viewer
+      \ = '/Applications/Skim.app/Contents/SharedSupport/displayline'
+let g:vimtex_view_general_options = '-r @line @pdf @tex'
 let g:vimtex_compiler_latexmk = {
       \ 'background': 1,
       \ 'build_dir': '',
@@ -111,9 +114,6 @@ let g:vimtex_compiler_latexmk = {
       \],
       \}
 
-let g:vimtex_view_general_viewer
-      \ = '/Applications/Skim.app/Contents/SharedSupport/displayline'
-let g:vimtex_view_general_options = '-r @line @pdf @tex'
 
 " markdown
 " concealを無効
