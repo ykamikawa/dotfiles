@@ -1,0 +1,7 @@
+[user]
+	name = ykamikawa
+	email = ytkmkw@gmail.com
+[color]
+	ui = auto
+[core]
+	editor = nvim
