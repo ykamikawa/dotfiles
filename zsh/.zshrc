@@ -108,12 +108,6 @@ export PYENV_ROOT=$HOME/.pyenv
 export PATH=$PYENV_ROOT/bin:$PATH
 eval "$(pyenv init -)"
 
-# go
-export GOROOT=/usr/local/opt/go/libexec
-export GOPATH=$HOME/work/go
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
-alias gobuild="go build -o"
-
 # neovim
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
