@@ -5,3 +5,6 @@
 	ui = auto
 [core]
 	editor = nvim
+
+[includeIf "gitdir:~/work/pfn/"]
+  path = ~/work/pfn/.gitconfig
