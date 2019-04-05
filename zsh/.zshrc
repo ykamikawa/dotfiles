@@ -1,28 +1,3 @@
-# File navigation aliases
-alias ..='cd ..'
-alias _='cd -'
-# add colors for filetype recognition
-alias ls='ls -hF -G'
-alias ll='ls -l -h'
-alias la='ls -lA'
-alias du='du -kh'
-alias df='df -kTh'
-
-# vim
-alias vim='nvim'
-
-# browser
-export BROWSER=/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
-
-# python
-export PYENV_ROOT=$HOME/.pyenv
-export PATH=$PYENV_ROOT/bin:$PATH
-eval "$(pyenv init -)"
-
-# neovim
-export XDG_CONFIG_HOME=$HOME/.config
-export XDG_CACHE_HOME=$HOME/.cache
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
@@ -74,6 +49,7 @@ ZSH_THEME="candy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+plugins=(git zsh-syntax-highlighting zsh-completions)
 
 # zsh-completions
 autoload -U compinit && compinit -u
@@ -109,3 +85,27 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# File navigation aliases
+alias ..='cd ..'
+alias _='cd -'
+# add colors for filetype recognition
+alias ls='ls -hF -G'
+alias ll='ls -l -h'
+alias la='ls -lA'
+alias du='du -kh'
+alias df='df -kTh'
+
+# vim
+alias vim='nvim'
+
+# browser
+export BROWSER=/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
+
+# python
+export PYENV_ROOT=$HOME/.pyenv
+export PATH=$PYENV_ROOT/bin:$PATH
+eval "$(pyenv init -)"
+
+# neovim
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_CACHE_HOME=$HOME/.cache
