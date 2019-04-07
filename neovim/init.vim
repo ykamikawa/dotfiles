@@ -4,7 +4,6 @@ set fenc=utf-8
 set fileencodings=utf-8
 set fileformats=unix,dos,mac
 set ambiwidth=double
-
 " 編集中のファイル名の表示
 set title
 " 行番号の追加
@@ -122,11 +121,11 @@ let g:markdown_conceal=''
 
 " python---------------------------------------------
 " python2
-let g:python_host_prog=$PYENV_ROOT . '/versions/anaconda-4.0.0/bin/python'
-" let g:python_host_prog='/usr/local/bin/python2'
+" let g:python_host_prog=$PYENV_ROOT . '/versions/anaconda-4.0.0/bin/python'
+let g:python_host_prog='/usr/local/bin/python2'
 " python3
-let g:python3_host_prog=$PYENV_ROOT . '/versions/anaconda3-4.3.1/bin/python'
-" let g:python3_host_prog='/usr/local/bin/python3'
+" let g:python3_host_prog=$PYENV_ROOT . '/versions/anaconda3-4.3.1/bin/python'
+let g:python3_host_prog='/usr/local/bin/python3'
 
 " go-------------------------------------------------
 " GOPATH
