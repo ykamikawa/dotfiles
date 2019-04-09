@@ -51,9 +51,6 @@ ZSH_THEME="candy"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git zsh-syntax-highlighting zsh-completions)
 
-# zsh-completions
-autoload -U compinit && compinit -u
-
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
