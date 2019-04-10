@@ -100,7 +100,7 @@ export BROWSER=/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
 
 # python
 export PYENV_ROOT=$HOME/.pyenv
-export PATH=$PYENV_ROOT/bin:$PATH
+export PATH=$PATH:$PYENV_ROOT/shims:$PYENV_ROOT/bin
 eval "$(pyenv init -)"
 
 # neovim
