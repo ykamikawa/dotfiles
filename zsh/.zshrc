@@ -95,6 +95,9 @@ alias df='df -kTh'
 # vim
 alias vim='nvim'
 
+# k8s
+alias k='kubectl'
+
 # browser
 export BROWSER=/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
 
@@ -106,3 +109,5 @@ eval "$(pyenv init -)"
 # neovim
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
+
+source ~/.bashrc

@@ -96,7 +96,7 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
 " tex
 " concealを無効
-let g:tex_conceal=''
+let g:tex_conceal = ""
 let g:vimtex_view_general_viewer
       \ = '/Applications/Skim.app/Contents/SharedSupport/displayline'
 let g:vimtex_view_general_options = '-r @line @pdf @tex'
@@ -116,7 +116,10 @@ let g:vimtex_compiler_latexmk = {
 
 " markdown
 " concealを無効
-let g:markdown_conceal=''
+let g:vim_markdown_conceal=''
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_auto_insert_bullets = 0
+let g:vim_markdown_new_list_item_indent = 0
 
 
 " python---------------------------------------------
