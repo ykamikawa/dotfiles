@@ -1,101 +1,87 @@
-" setting---------------------------------------------
-" 文字コードをUFT-8に設定
+" Set UTF-8
 set fenc=utf-8
 set fileencodings=utf-8
 set fileformats=unix,dos,mac
 set ambiwidth=double
-" 編集中のファイル名の表示
+" view file name
 set title
-" 行番号の追加
+" Add row
 set number
-" 行を折り返す
+" Return row
 set wrap
-" ルーラーを表示する
+" View ruler
 set ruler
-" バックアップファイルを作らない
+" no backup file
 set nobackup
-" スワップファイルを作らない
+" no swap file
 set noswapfile
 set nowritebackup
-" 未保存ファイルの終了時に保存確認を行なう
+" Confirm unsaved file
 set confirm
-" 編集中のファイルが変更されたら自動で読み直す
+" Autoread, if file is chenged
 set autoread
-" バッファが編集中でもその他のファイルを開けるように
+" Open hidden file
 set hidden
-" 入力中のコマンドをステータスに表示する
+" Display command on status
 set showcmd
-" マウス
+" mouse
 set mouse=a
-" ファイルが変更された際に自動で読み込む
-set autoread
-" 対応するカッコを強調
+" Emphasis match
 set showmatch
-" バックスペースで削除
+" Use back space to delete
 set backspace=indent,eol,start
-" コマンドラインモードでの補完を有効にする
+" wild menu
 set wildmenu
-" コマンドラインモードでの補完方法を設定する
 set wildmode=list:longest,full
-" ステータスバーを常に表示する
+" Display status bar always
 set laststatus=2
-
-" Tab系
-" 不可視文字を表示する
+" Display unvisible char
 set list
-" 不可視文字を可視化
 set listchars=tab:>.,trail:･,extends:>,precedes:<,nbsp:%
-" Tab文字を半角スペースにする
+" Change tab to space
 set expandtab
-"全角スペースをハイライト表示
+" Highlight ZenkakuSpace
 function! ZenkakuSpace()
     highlight ZenkakuSpace cterm=reverse ctermfg=DarkMagenta gui=reverse guifg=DarkMagenta
 endfunction
-" 行頭以外のTab文字の表示幅（スペースいくつ分）
+" Tab space
 set tabstop=2
-" 行頭でのTab文字の表示幅
+" Tab width
 set shiftwidth=2
-" 改行時にインデントの保持
+" Keep indent
 set autoindent
-" syntaxの有効化
+" Enable syntax
 syntax enable
 
-" カーソル系
-" クリップボードを他のアプリと共有
+" Cursor settings
+" Share clipboard with other apps
 set clipboard+=unnamedplus
-" tab幅
-set tabstop=2
-set shiftwidth=2
-" 開業時に自動でインデント クリップボードの貼り付けがおかしくなるかも
-"set smartindent
-" 行末の1文字先までカーソルを移動できるように
+" Add one virtual char
 set virtualedit=onemore
-" カーソルの回り込み
 set whichwrap=b,s,[,],<,>
-" 行の強調
+" Emphasis line
 set cursorline
-" 列の強調
+" Emphasis column
 set cursorcolumn
-" カーソル行の上下へのオフセットを設定する
+" Set offset to cursor row
 set scrolloff=4
 
-" 検索系
-" 検索文字列が小文字の場合は大文字小文字を区別なく検索する
+" Search settings
+" Dont distinguish, if search word is lowercase
 set ignorecase
-" 検索文字列に大文字が含まれている場合は区別して検索する
+" Distinguish uppercase and lowercase
 set smartcase
-" 検索文字列入力時に順次対象文字列にヒットさせる
+" Wrap word
 set incsearch
-" 検索時に最後まで行ったら最初に戻る
 set wrapscan
-" 検索語をハイライト表示
+" Highlight results
 set hlsearch
-" ESC連打でハイライト解除
+" Reset highlight by putting ESC
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 " end setting----------------------------------------
 
-" tex
-" concealを無効
+" Tex settings
+" Disable conceal
 let g:tex_conceal = ""
 let g:vimtex_view_general_viewer
       \ = '/Applications/Skim.app/Contents/SharedSupport/displayline'
@@ -114,79 +100,78 @@ let g:vimtex_compiler_latexmk = {
       \}
 
 
-" markdown
-" concealを無効
+" Markdown
+" Disable conceal
 let g:vim_markdown_conceal=''
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_auto_insert_bullets = 0
 let g:vim_markdown_new_list_item_indent = 0
 
 
-" python---------------------------------------------
-" python2
+" python settings
+" python2 path
 let g:python_host_prog=$PYENV_ROOT . '/shims/python'
 " let g:python_host_prog='/usr/local/bin/python2'
 " let g:python_host_prog='/usr/bin/python2'
-" python3
+" python3 path
 let g:python3_host_prog=$PYENV_ROOT . '/shims/python'
 " let g:python3_host_prog='/usr/local/bin/python3'
 " let g:python3_host_prog='/usr/bin/python3'
 
-" go-------------------------------------------------
+" go settings
 " GOPATH
 let g:go_bin_path=$GOPATH .'/bin'
 
-" キーマップの設定-----------------------------------
-" プレフィックスの変更 \->space
+" Key bind
+" Change prefix \ to space
 let mapleader="\<Space>"
-" インサートモードから抜ける
+" Escape from insert mode
 inoremap jj <ESC>
-" 行頭・行末に移動する
+" Move to begging / end of line
 noremap <Leader>h ^
 noremap <Leader>l $
-" ウィンドウ間を移動する
+" Move between windows
 nnoremap <Leader><Tab> <C-w>w
-" タブを移動する
+" Move between tab
 nnoremap <Leader>t gt
 nnoremap <Leader>T gT
-" 表示行で移動する 物理行
+" Move between display line
 noremap j gj
 noremap k gk
-" 保存・終了する
+" Save and finish
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>
-" ターミナルモード
+" Terminal mode
 if has('nvim')
-	" 新しいタブでターミナルを起動
+  " Start terminal on new tab
 	nnoremap @t :tabe<CR>:terminal<CR>
-	" Ctrl + q でターミナルを終了
+  " Finish terminal by Ctrl + q
 	tnoremap <C-q> <C-\><C-n>:q<CR>
-	" ESCでターミナルモードからノーマルモードへ
+  " Move to normal mode from terminal mode by ESC
 	tnoremap <ESC> <C-\><C-n>
-  " Ctrl + w でターミナルモードからノーマルモードへ
+  " Move to normal mode from terminal mode by Ctrl + w
   tnoremap <C-w> <C-\><C-n>
-	" ターミナルモードでのタブ移動
+  " Tab move in terminal mode
 	tnoremap <C-l> <C-\><C-n>gt
 	tnoremap <C-h> <C-\><C-n>gT
 endif
-" end キーマップ-------------------------------------
+" End key bind
 
-" dein.vimの設定
-"dein Scripts----------------------------------------
+" Settings of dein.vim
+"dein Scripts
 if !&compatible
   set nocompatible
 endif
 
-" reset augroup
+" Reset augroup
 augroup MyAutoCmd
   autocmd!
 augroup END
 
-" dein settings
 let s:cache_home=empty($XDG_CACHE_HOME) ? expand('~/.cache') : $XDG_CACHE_HOME
 let s:dein_dir=s:cache_home . '/dein'
 let s:dein_repo_dir=s:dein_dir . '/repos/github.com/Shougo/dein.vim'
-" dein.vimがなければ、dein.vim自体を自動インストール
+" If there is no dein.vim, install dein.vim
 if !isdirectory(s:dein_repo_dir)
   call system('git clone https://github.com/Shougo/dein.vim ' . shellescape(s:dein_repo_dir))
 endif
@@ -194,13 +179,13 @@ endif
 " Required:
 let &runtimepath=s:dein_repo_dir .",". &runtimepath
 
-" プラグイン読み込み＆キャッシュ作成
-" tomlファイルのパス
+" Load plugin and create cache
+" Path to dein.toml
 let s:toml_file=fnamemodify(expand('<sfile>'), ':h').'/dein.toml'
 if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
 
-	" tomlファイルからプラグインのリストをロードしキャッシュ
+  " Get plugin list and cache them
   call dein#load_toml(s:toml_file)
 
   " Required:
@@ -213,8 +198,28 @@ filetype plugin indent on
 filetype indent on
 syntax on
 
-" 不足プラグインの自動インストール
+" Install plugin
 if has('vim_starting') && dein#check_install()
   call dein#install()
 endif
-"End dein Scripts-------------------------
+" End dein scripts
+
+let g:ale_linters = {
+    \ 'python': ['flake8'],
+    \ }
+
+let g:ale_fixers = {
+    \ 'python': ['autopep8', 'black', 'isort'],
+    \ }
+
+let g:ale_python_flake8_executable = g:python3_host_prog
+let g:ale_python_flake8_options = '-m flake8'
+let g:ale_python_autopep8_executable = g:python3_host_prog
+let g:ale_python_autopep8_options = '-m autopep8'
+let g:ale_python_isort_executable = g:python3_host_prog
+let g:ale_python_isort_options = '-m isort'
+let g:ale_python_black_executable = g:python3_host_prog
+let g:ale_python_black_options = '-m black'
+
+nmap <silent> <Leader>x <Plug>(ale_fix)
+let g:ale_fix_on_save = 1

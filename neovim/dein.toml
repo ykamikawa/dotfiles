@@ -36,6 +36,10 @@ call deoplete#custom#source('_', 'converters', [
 [[plugins]]
 repo='zchee/deoplete-zsh'
 
+# ALE
+[[plugins]]
+repo='dense-analysis/ale'
+
 # go
 [[plugins]]
 repo='fatih/vim-go'
