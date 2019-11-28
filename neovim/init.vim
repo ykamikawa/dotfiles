@@ -76,9 +76,51 @@ set incsearch
 set wrapscan
 " Highlight results
 set hlsearch
+" end setting
+
+" Key binding
+" Change prefix \ to space
+let mapleader="\<Space>"
+
+" Move to begging / end of line
+noremap <Leader>h ^
+noremap <Leader>l $
+" Move between display line
+noremap j gj
+noremap k gk
+
+" Normal mode
 " Reset highlight by putting ESC
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
-" end setting----------------------------------------
+" Move between windows
+nnoremap <Leader><Tab> <C-w>w
+" Move between tab
+nnoremap <Leader>t gt nnoremap <Leader>T gT
+" Save and finish
+nnoremap <Leader>w :w<CR>
+nnoremap <Leader>q :q<CR>
+if has('nvim')
+  " Start terminal on new tab
+	nnoremap @t :tabe<CR>:terminal<CR>
+endif
+
+" Insert mode
+" Escape from insert mode
+inoremap jj <ESC>
+
+" Terminal mode
+if has('nvim')
+  " Finish terminal by Ctrl + q
+	tnoremap <C-q> <C-\><C-n>:q<CR>
+  " Move to normal mode from terminal mode by ESC
+	tnoremap <ESC> <C-\><C-n>
+  " Move to normal mode from terminal mode by Ctrl + w
+  tnoremap <C-w> <C-\><C-n>
+  " Tab move in terminal mode
+	tnoremap <C-l> <C-\><C-n>gt
+	tnoremap <C-h> <C-\><C-n>gT
+endif
+" End key binding
 
 " Tex settings
 " Disable conceal
@@ -100,13 +142,12 @@ let g:vimtex_compiler_latexmk = {
       \}
 
 
-" Markdown
+" Markdown settings
 " Disable conceal
 let g:vim_markdown_conceal=''
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_auto_insert_bullets = 0
 let g:vim_markdown_new_list_item_indent = 0
-
 
 " python settings
 " python2 path
@@ -117,47 +158,27 @@ let g:python_host_prog=$PYENV_ROOT . '/shims/python'
 let g:python3_host_prog=$PYENV_ROOT . '/shims/python'
 " let g:python3_host_prog='/usr/local/bin/python3'
 " let g:python3_host_prog='/usr/bin/python3'
+"
+" python ALE
+let g:ale_linters = {
+    \ 'python': ['flake8'],
+    \ }
 
-" go settings
-" GOPATH
-let g:go_bin_path=$GOPATH .'/bin'
+let g:ale_fixers = {
+    \ 'python': ['isort', 'black'],
+    \ }
 
-" Key bind
-" Change prefix \ to space
-let mapleader="\<Space>"
-" Escape from insert mode
-inoremap jj <ESC>
-" Move to begging / end of line
-noremap <Leader>h ^
-noremap <Leader>l $
-" Move between windows
-nnoremap <Leader><Tab> <C-w>w
-" Move between tab
-nnoremap <Leader>t gt
-nnoremap <Leader>T gT
-" Move between display line
-noremap j gj
-noremap k gk
-" Save and finish
-nnoremap <Leader>w :w<CR>
-nnoremap <Leader>q :q<CR>
-" Terminal mode
-if has('nvim')
-  " Start terminal on new tab
-	nnoremap @t :tabe<CR>:terminal<CR>
-  " Finish terminal by Ctrl + q
-	tnoremap <C-q> <C-\><C-n>:q<CR>
-  " Move to normal mode from terminal mode by ESC
-	tnoremap <ESC> <C-\><C-n>
-  " Move to normal mode from terminal mode by Ctrl + w
-  tnoremap <C-w> <C-\><C-n>
-  " Tab move in terminal mode
-	tnoremap <C-l> <C-\><C-n>gt
-	tnoremap <C-h> <C-\><C-n>gT
-endif
-" End key bind
+let g:ale_python_isort_executable = g:python3_host_prog
+let g:ale_python_isort_options = '-m isort'
+let g:ale_python_black_executable = g:python3_host_prog
+let g:ale_python_black_options = '-m black'
+let g:ale_python_flake8_executable = g:python3_host_prog
+let g:ale_python_flake8_options = '-m flake8'
 
-" Settings of dein.vim
+nmap <silent> <Leader>x <Plug>(ale_fix)
+let g:ale_fix_on_save = 0
+
+" dein.vim settings
 "dein Scripts
 if !&compatible
   set nocompatible
@@ -202,23 +223,4 @@ syntax on
 if has('vim_starting') && dein#check_install()
   call dein#install()
 endif
-" End dein scripts
-
-" python ALE
-let g:ale_linters = {
-    \ 'python': ['flake8'],
-    \ }
-
-let g:ale_fixers = {
-    \ 'python': ['isort', 'black'],
-    \ }
-
-let g:ale_python_isort_executable = g:python3_host_prog
-let g:ale_python_isort_options = '-m isort'
-let g:ale_python_black_executable = g:python3_host_prog
-let g:ale_python_black_options = '-m black'
-let g:ale_python_flake8_executable = g:python3_host_prog
-let g:ale_python_flake8_options = '-m flake8'
-
-nmap <silent> <Leader>x <Plug>(ale_fix)
-let g:ale_fix_on_save = 0
+" End dein.vim settings
