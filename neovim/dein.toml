@@ -110,6 +110,8 @@ end
 
 # git
 [[plugins]]
+repo='lambdalisue/gina.vim'
+[[plugins]]
 repo='Xuyuanp/nerdtree-git-plugin'
 [[plugins]]
 repo='airblade/vim-gitgutter'

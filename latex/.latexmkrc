@@ -1,3 +1,5 @@
+#!/bin/bash
+
 $latex            = 'platex -synctex=1 -halt-on-error';
 $latex_silent     = 'platex -synctex=1 -halt-on-error -interaction=batchmode';
 $bibtex           = 'pbibtex';

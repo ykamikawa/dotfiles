@@ -165,7 +165,7 @@ let g:ale_linters = {
     \ }
 
 let g:ale_fixers = {
-    \ 'python': ['isort', 'black'],
+    \ 'python': ['isort', 'black', 'flake8'],
     \ }
 
 let g:ale_python_isort_executable = g:python3_host_prog
