@@ -92,20 +92,20 @@ alias la='ls -lA'
 alias du='du -kh'
 alias df='df -kTh'
 
-# vim
-alias vim='nvim'
-
 # k8s
 alias k='kubectl'
+alias mn1='kubectl config use-context mn1'
+alias mnj='kubectl config use-context mnj'
 
 # browser
 export BROWSER=/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
 
 # python
 export PYENV_ROOT=$HOME/.pyenv
-export PATH=$PATH:$PYENV_ROOT/shims:$PYENV_ROOT/bin
+export PATH=$PATH:$PYENV_ROOT/shims:$PYENV_ROOT/bin:$HOME/.local/bin
 eval "$(pyenv init -)"
 
 # neovim
+alias vim='nvim'
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
