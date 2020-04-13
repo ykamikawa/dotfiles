@@ -40,6 +40,12 @@ repo='zchee/deoplete-zsh'
 [[plugins]]
 repo='dense-analysis/ale'
 
+# python
+[[plugins]]
+repo='zchee/deoplete-jedi'
+depends='deoplete.nvim'
+on_ft='python'
+
 # go
 [[plugins]]
 repo='fatih/vim-go'
@@ -49,12 +55,6 @@ repo='zchee/deoplete-go'
 build='make'
 on_ft='go'
 depends='deoplete.nvim'
-
-# python
-[[plugins]]
-repo='zchee/deoplete-jedi'
-depends='deoplete.nvim'
-on_ft='python'
 
 # HTML css3
 [[plugins]]
