@@ -29,10 +29,12 @@ export PATH=$PATH:$PYENV_ROOT/shims:$PYENV_ROOT/bin:$HOME/.local/bin
 eval "$(pyenv init -)"
 
 # go
-export GOROOT=/usr/local/opt/go/libexec
-export GOPATH=$HOME/work/go
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+export GOENV_ROOT=$HOME/.goenv
+export PATH=$GOENV_ROOT/bin:$PATH
+eval "$(goenv init -)"
 alias gobuild="go build -o"
+export PATH=$GOPATH/bin:$PATH
+export LGOPATH=$GOPATH/src/github.com/yunabe/lgo
 
 # browser
 export BROWSER=/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
