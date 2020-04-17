@@ -10,11 +10,13 @@ prompt_order = [
     "username",
     "hostname",
     "kubernetes",
-    "directory", "git_branch",
+    "directory",
+    "git_branch",
     "git_commit",
     "git_state",
     "git_status",
-    "hg_branch", "docker_context",
+    "hg_branch",
+    "docker_context",
     "package",
     "dotnet",
     "elixir",
@@ -89,14 +91,14 @@ style = "dimmed black"
 min_time = 30_000
 show_milliseconds = false
 prefix = "elapsed "
-style = "bold green"
+style = "bold dimmed green"
 
 # directory
 [directory]
 truncation_length = 6
 truncation_to_repo = true
 prefix = "in "
-style = "bold cyan"
+style = "bold dimmed cyan"
 
 # battery
 [battery]
@@ -127,18 +129,18 @@ style = "bold dimmed white"
 [jobs]
 symbol = "✦"
 threshold = 1
-style = "bold blue"
+style = "bold dimmed blue"
 
 # git
 [git_branch]
 symbol = " "
 truncation_symbol = "…"
-style = "bold purple"
+style = "bold dimmed purple"
 [git_commit]
 commit_hash_length = 7
 prefix = "("
 suffix = ")"
-style = "bold green"
+style = "bold dimmed green"
 only_detected = true
 truncation_length = 4
 [git_state]
@@ -160,16 +162,16 @@ untracked = "🤷?"
 stashed = "📦$"
 modified = "📝!"
 staged.value = "++"
-staged.style = "green"
+staged.style = "bold green"
 staged_count.enabled = true
-staged_count.style = "green"
+staged_count.style = "bold green"
 renamed = "👅"
 deleted = "🗑✘"
 
 # Package version
 [package]
 symbol = "📦"
-style = "bold red"
+style = "bold dimmed red"
 
 # Mercurial
 [hg_branch]
@@ -195,7 +197,7 @@ style = "bold blue"
 # kubernetes
 [kubernetes]
 symbol = "⛵"
-style = "bole dimmed blue"
+style = "bold dimmed blue"
 disabled = false
 [kubernetes.context_aliases]
 
@@ -234,7 +236,7 @@ style = "bold syan"
 [python]
 symbol = "🐍"
 pyenv_version_name = true
-pyenv_prefix = "pyenv"
+pyenv_prefix = "pyenv "
 style = "bold yellow"
 [conda]
 style = "bold green"
