@@ -1,0 +1,250 @@
+# Don't print a new line at the start of the prompt
+add_newline = false
+
+# line break
+[line_break]
+disabled = false
+
+# prompt order
+prompt_order = [
+    "username",
+    "hostname",
+    "kubernetes",
+    "directory", "git_branch",
+    "git_commit",
+    "git_state",
+    "git_status",
+    "hg_branch", "docker_context",
+    "package",
+    "dotnet",
+    "elixir",
+    "elm",
+    "golang",
+    "haskell",
+    "java",
+    "julia",
+    "nodejs",
+    "php",
+    "python",
+    "ruby",
+    "rust",
+    "terraform",
+    "nix_shell",
+    "conda",
+    "memory_usage",
+    "aws",
+    "env_var",
+    "crystal",
+    "cmd_duration",
+    "line_break",
+    "jobs",
+    "battery",
+    "time",
+    "character",
+]
+
+# time
+[time]
+disabled = false
+use_12hr = false
+style = "dimmed bold yellow"
+format = "🕙 %T"
+utc_time_offset = "+9"
+
+# user name
+[username]
+style_root = "bold red"
+style_user = "bold blue"
+show_always = true
+disabled = false
+
+# hostname
+[hostname]
+ssh_only = false
+prefix = "⟪"
+suffix = "⟫"
+trim_at = "."
+style = "bold dimmed green"
+disabled = false
+
+# character
+[character]
+symbol = "➜"
+error_symbol = "✗"
+use_symbol_for_status = true
+
+# time when file scam
+scan_timeout = 30
+
+# env
+[env_var]
+#variable = "SHELL"
+#default = "unknown shell"
+prefix = ""
+suffix = ""
+style = "dimmed black"
+
+# runtime
+[cmd_duration]
+min_time = 30_000
+show_milliseconds = false
+prefix = "elapsed "
+style = "bold green"
+
+# directory
+[directory]
+truncation_length = 6
+truncation_to_repo = true
+prefix = "in "
+style = "bold cyan"
+
+# battery
+[battery]
+full_symbol = "🔋 "
+charging_symbol = "⚡️ "
+discharging_symbol = "💀 "
+[[battery.display]]
+threshold = 10
+style = "bold red"
+[[battery.display]]
+threshold = 50
+style = "dimmed bold yellow"
+[[battery.display]]
+threshold = 100
+style = "dimmed bold green"
+
+# memory
+[memory_usage]
+disabled = false
+show_percentage = true
+show_swap = true
+threshold = 90
+symbol = "🐏 "
+separator = "|"
+style = "bold dimmed white"
+
+# jobs
+[jobs]
+symbol = "✦"
+threshold = 1
+style = "bold blue"
+
+# git
+[git_branch]
+symbol = " "
+truncation_symbol = "…"
+style = "bold purple"
+[git_commit]
+commit_hash_length = 7
+prefix = "("
+suffix = ")"
+style = "bold green"
+only_detected = true
+truncation_length = 4
+[git_state]
+rebase = "REBASING"
+merge = "MERGING"
+revert = "REVERTING"
+cherry_pick = "🍒 PICKING"
+bisect = "BISECTING"
+am = "AM"
+am_or_rebase = "AM/REBASE"
+progress_divider = "/"
+style = "bold yellow"
+[git_status]
+conflicted = "🏳="
+ahead = "🏎⇡💨"
+behind = "😰⇣"
+diverged = "😵⇕"
+untracked = "🤷?"
+stashed = "📦$"
+modified = "📝!"
+staged.value = "++"
+staged.style = "green"
+staged_count.enabled = true
+staged_count.style = "green"
+renamed = "👅"
+deleted = "🗑✘"
+
+# Package version
+[package]
+symbol = "📦"
+style = "bold red"
+
+# Mercurial
+[hg_branch]
+symbol = "🌱 "
+truncation_symbol = "…"
+style = "bold purple"
+
+# aws
+[aws]
+style = "bold yellow"
+symbol = "🅰 "
+displayed_items = "region"
+[aws.region_aliases]
+#ap-southeast-2 = "au"
+#us-east-1 = "va"
+
+# docker
+[docker_context]
+symbol = "🐳"
+only_with_files = false
+style = "bold blue"
+
+# kubernetes
+[kubernetes]
+symbol = "⛵"
+style = "bole dimmed blue"
+disabled = false
+[kubernetes.context_aliases]
+
+# crystal
+[crystal]
+symbol = "🔮"
+style = "bold red"
+
+# terraform
+[terraform]
+symbol = "💠"
+show_version = false
+style = "bold 105"
+
+# Julia
+[julia]
+symbol = "👸"
+style = "bold purple"
+
+# NodeJS
+[nodejs]
+symbol = "🤖"
+style = "bold green"
+
+# PHP
+[php]
+symbol = "🐘"
+style = "bold red"
+
+# Golang
+[golang]
+symbol = "🐹"
+style = "bold syan"
+
+# Python
+[python]
+symbol = "🐍"
+pyenv_version_name = true
+pyenv_prefix = "pyenv"
+style = "bold yellow"
+[conda]
+style = "bold green"
+
+# Ruby
+[ruby]
+symbol = "💎"
+style = "bold red"
+
+# Rust
+[rust]
+symbol = "⚙️"
+style = "bold red"

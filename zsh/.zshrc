@@ -115,3 +115,5 @@ alias gobuild="go build -o"
 
 # browser
 export BROWSER=/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
+
+eval "$(starship init zsh)"
