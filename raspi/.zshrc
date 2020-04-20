@@ -1,6 +1,6 @@
 # oh-my-zsh
 export ZSH=~/.oh-my-zsh
-theme="candy"
+ZSH_THEME="candy"
 plugins=(git zsh-syntax-highlighting zsh-completions zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
 
