@@ -22,5 +22,3 @@ GOENV_ROOT=$HOME/.goenv
 PATH=$GOENV_ROOT/bin:$PATH
 goenv install 1.9.7
 goenv global 1.9.7
-
-zsh

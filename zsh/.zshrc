@@ -36,6 +36,9 @@ alias gobuild="go build -o"
 export PATH=$GOPATH/bin:$PATH
 export LGOPATH=$GOPATH/src/github.com/yunabe/lgo
 
+# rust
+export PATH=$HOME/.cargo/bin:$PATH
+
 # browser
 export BROWSER=/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
 
