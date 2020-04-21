@@ -50,7 +50,7 @@ prompt_order = [
 disabled = false
 use_12hr = false
 style = "dimmed bold yellow"
-format = "🕙 %T"
+#format = "🕙 %T"
 utc_time_offset = "+9"
 
 # user name
@@ -102,17 +102,18 @@ style = "bold cyan"
 
 # battery
 [battery]
-full_symbol = "🔋 "
-charging_symbol = "⚡️ "
-discharging_symbol = "💀 "
+full_symbol = "🔋"
+charging_symbol = "⚡️"
+discharging_symbol = "💀"
+disabled = false
 [[battery.display]]
 threshold = 10
 style = "bold red"
 [[battery.display]]
-threshold = 50
+threshold = 30
 style = "bold dimmed yellow"
 [[battery.display]]
-threshold = 100
+threshold = 50
 style = "bold dimmed green"
 
 # memory
