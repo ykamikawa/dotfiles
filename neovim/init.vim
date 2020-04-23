@@ -2,8 +2,7 @@
 set fenc=utf-8
 set fileencodings=utf-8
 set fileformats=unix,dos,mac
-set ambiwidth=double
-" view file name
+set ambiwidth=double " view file name
 set title
 " Add row
 set number
@@ -158,14 +157,26 @@ let g:python_host_prog=$PYENV_ROOT . '/shims/python'
 let g:python3_host_prog=$PYENV_ROOT . '/shims/python'
 " let g:python3_host_prog='/usr/local/bin/python3'
 " let g:python3_host_prog='/usr/bin/python3'
-"
-" python ALE
+
+" ALE
 let g:ale_linters = {
+    \ 'vim': ['vint'],
     \ 'python': ['flake8'],
+    \ 'html': ['htmlhint'],
+    \ 'css': ['csslint'],
+    \ 'javascript': ['eslint'],
     \ }
 
 let g:ale_fixers = {
+    \ 'vim': ['remove_trailing_lines', 'trim_whitespace'],
     \ 'python': ['autopep8', 'black', 'isort'],
+    \ 'go': ['gofmt', 'goimports'],
+    \ 'html': ['tidy'],
+    \ 'css': ['stylelint'],
+    \ 'javascript': ['prettier'],
+    \ 'markdown': [
+    \   {buffer, lines -> {'command': 'textlint -c ~/.config/textlintrc -o /dev/null --fix --no-color --quiet %t', 'read_temporary_file': 1}}
+    \   ],
     \ }
 
 let g:ale_python_flake8_executable = g:python3_host_prog
@@ -176,6 +187,7 @@ let g:ale_python_black_executable = g:python3_host_prog
 let g:ale_python_black_options = '-m black'
 let g:ale_python_isort_executable = g:python3_host_prog
 let g:ale_python_isort_options = '-m isort'
+
 
 nmap <silent> <Leader>x <Plug>(ale_fix)
 let g:ale_fix_on_save = 0
