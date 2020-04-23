@@ -32,6 +32,10 @@ call deoplete#custom#source('_', 'converters', [
       \ ])
 '''
 
+# <Leader> + r
+[[plugins]]
+repo='thinca/vim-quickrun'
+
 #zsh
 [[plugins]]
 repo='zchee/deoplete-zsh'
@@ -45,16 +49,30 @@ repo='dense-analysis/ale'
 repo='zchee/deoplete-jedi'
 depends='deoplete.nvim'
 on_ft='python'
+[[plugins]]
+repo='Vimjas/vim-python-pep8-indent'
 
 # go
 [[plugins]]
 repo='fatih/vim-go'
 on_ft='go'
+hook_add='''
+let g:go_def_mapping_enabled = 0
+let g:go_fmt_autosave = 1
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+'''
 [[plugins]]
 repo='zchee/deoplete-go'
 build='make'
 on_ft='go'
 depends='deoplete.nvim'
+
+# javascript
+[[plugins]]
+repo='prettier/vim-prettier'
 
 # HTML css3
 [[plugins]]
@@ -64,6 +82,8 @@ let g:user_emmet_leader_key='<C-e>'
 '''
 [[plugins]]
 repo='hail2u/vim-css3-syntax'
+[[plugins]]
+repo='alvan/vim-closetag'
 [[plugins]]
 repo='gko/vim-coloresque'
 
@@ -83,9 +103,6 @@ repo='tyru/open-browser.vim'
 [[plugins]]
 repo='lervag/vimtex'
 
-[[plugins]]
-repo='thinca/vim-quickrun'
-
 # json
 [[plugins]]
 repo='elzr/vim-json'
@@ -94,7 +111,12 @@ repo='elzr/vim-json'
 [[plugins]]
 repo='chrisbra/csv.vim'
 
-# NERDTree
+# toml
+[[plugins]]
+repo='cespare/vim-toml'
+on_ft='toml'
+
+# File louncher NERDTree
 [[plugins]]
 repo='scrooloose/nerdtree'
 hook_add='''
@@ -115,10 +137,14 @@ repo='lambdalisue/gina.vim'
 repo='Xuyuanp/nerdtree-git-plugin'
 [[plugins]]
 repo='airblade/vim-gitgutter'
+[[plugins]]
+repo='tpope/vim-fugitive'
 
+# trail white space
 [[plugins]]
 repo='bronson/vim-trailing-whitespace'
 
+# visible indent
 [[plugins]]
 repo='Yggdroot/indentLine'
 
@@ -130,9 +156,6 @@ nmap k <Plug>(accelerated_jk_gk)
 '''
 
 [[plugins]]
-repo='tpope/vim-fugitive'
-
-[[plugins]]
 repo='Townk/vim-autoclose'
 
 [[plugins]]
@@ -142,11 +165,7 @@ repo='Shougo/context_filetype.vim'
 repo='osyo-manga/vim-precious'
 depends=['context_filetype.vim']
 
-# toml syntax
-[[plugins]]
-repo='cespare/vim-toml'
-on_ft='toml'
-
+# color scheme
 [[plugins]]
 repo='w0ng/vim-hybrid'
 hook_add='''
@@ -154,26 +173,31 @@ set background=dark
 au MyAutoCmd VimEnter * nested colorscheme hybrid
 '''
 
-[[plugins]]
-repo='tpope/vim-fugitive'
-
+# airline
 [[plugins]]
 repo='vim-airline/vim-airline'
 hook_add='''
-" Powerline$B7O%U%)%s%H$rMxMQ$9$k(B
-set laststatus=2
+" Powerline
 let g:airline_powerline_fonts = 1
-" $B%?%V%P!<$N%+%9%?%^%$%:$rM-8z$K$9$k(B
+let g:airline_theme='molokai'
+set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
-" $B%?%V%P!<$N1&NN0h$rHsI=<($K$9$k(B
 let g:airline#extensions#tabline#show_splits = 1
 let g:airline#extensions#tabline#show_tab_type = 1
 let g:airline#extensions#tabline#show_close_button = 1
+let g:airline_section_z = airline#section#create(['windowswap', '%3p%% ', 'linenr', ':%3v'])
+" gitのHEADから変更した行の+-を非表示
+" let g:airline#extensions#hunks#enabled = 0
+let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#ale#error_symbol = 'E:'
+let g:airline#extensions#ale#warning_symbol = 'W:'
+let g:airline#extensions#ale#open_lnum_symbol = '('
+let g:airline#extensions#ale#close_lnum_symbol = ')'
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#whitespace#enabled = 1
 '''
 [[plugins]]
 repo='vim-airline/vim-airline-themes'
 depends='vim-airline'
-hook_add='''
-set ambiwidth=double
-let g:airline_theme='molokai'
-'''
+[[plugins]]
+repo='ryanoasis/vim-devicons'

@@ -172,7 +172,7 @@ let g:ale_fixers = {
     \ 'python': ['autopep8', 'black', 'isort'],
     \ 'go': ['gofmt', 'goimports'],
     \ 'html': ['tidy'],
-    \ 'css': ['stylelint'],
+    \ 'css': ['stylelint', 'prettier'],
     \ 'javascript': ['prettier'],
     \ 'markdown': [
     \   {buffer, lines -> {'command': 'textlint -c ~/.config/textlintrc -o /dev/null --fix --no-color --quiet %t', 'read_temporary_file': 1}}
@@ -191,6 +191,15 @@ let g:ale_python_isort_options = '-m isort'
 
 nmap <silent> <Leader>x <Plug>(ale_fix)
 let g:ale_fix_on_save = 0
+let g:ale_sign_error = '⨉'
+let g:ale_sign_warning = '⚠'
+let g:ale_echo_msg_format = '[%linter%]%code: %%s'
+let g:ale_sign_column_always = 1
+highlight link ALEErrorSign Tag
+highlight link ALEWarningSign StorageClass
+" Jump to next error with Ctrl + k or Ctrl + j
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " dein.vim settings
 "dein Scripts
@@ -202,7 +211,7 @@ endif
 augroup MyAutoCmd
   autocmd!
 augroup END
-
+" dein.vimがなければinstall
 let s:cache_home=empty($XDG_CACHE_HOME) ? expand('~/.cache') : $XDG_CACHE_HOME
 let s:dein_dir=s:cache_home . '/dein'
 let s:dein_repo_dir=s:dein_dir . '/repos/github.com/Shougo/dein.vim'
@@ -233,7 +242,7 @@ filetype plugin indent on
 filetype indent on
 syntax on
 
-" Install plugin
+" Install plugins in dein.toml
 if has('vim_starting') && dein#check_install()
   call dein#install()
 endif
