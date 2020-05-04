@@ -171,7 +171,7 @@ let g:ale_fixers = {
     \ 'vim': ['remove_trailing_lines', 'trim_whitespace'],
     \ 'python': ['autopep8', 'black', 'isort'],
     \ 'go': ['gofmt', 'goimports'],
-    \ 'html': ['tidy'],
+    \ 'html': ['html-beautify'],
     \ 'css': ['stylelint', 'prettier'],
     \ 'javascript': ['prettier'],
     \ 'markdown': [
