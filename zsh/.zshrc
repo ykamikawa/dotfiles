@@ -42,4 +42,10 @@ export PATH=$HOME/.cargo/bin:$PATH
 # browser
 export BROWSER=/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
 
+alias kubectl="pf kubectl"
+alias pfkube="pf pfkube"
+alias pftaskqueue="pf pftaskqueue"
+alias git-ghost="pf git-ghost"
+alias pfbuild="pf pfbuild"
+
 eval "$(starship init zsh)"
