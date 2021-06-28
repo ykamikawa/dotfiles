@@ -63,42 +63,37 @@ disabled = false
 # hostname
 [hostname]
 ssh_only = false
-prefix = "⟪"
-suffix = "⟫"
 trim_at = "."
 style = "bold green"
 disabled = false
 
 # character
 [character]
-symbol = "➜"
-error_symbol = "✗"
-use_symbol_for_status = true
-
-# time when file scam
-scan_timeout = 30
+success_symbol = "[➜](bold green) "
+error_symbol = "[✗](bold red) "
+vicmd_symbol = "[V](bold green) "
 
 # env
 [env_var]
 #variable = "SHELL"
 #default = "unknown shell"
-prefix = ""
-suffix = ""
 style = "dimmed black"
+disabled = false
 
 # runtime
 [cmd_duration]
 min_time = 30_000
 show_milliseconds = false
-prefix = "elapsed "
 style = "bold dimmed green"
 
 # directory
 [directory]
-truncation_length = 6
-truncation_to_repo = true
-prefix = "in "
+truncation_length = 8
+truncate_to_repo = true
 style = "bold cyan"
+read_only = "🔒"
+read_only_style = "red"
+home_symbol = "~"
 
 # battery
 [battery]
@@ -119,11 +114,8 @@ style = "bold dimmed green"
 # memory
 [memory_usage]
 disabled = false
-show_percentage = true
-show_swap = true
 threshold = 90
 symbol = "🐏 "
-separator = "|"
 style = "bold dimmed white"
 
 # jobs
@@ -139,11 +131,11 @@ truncation_symbol = "…"
 style = "bold  purple"
 [git_commit]
 commit_hash_length = 7
-prefix = "("
-suffix = ")"
 style = "bold green"
-only_detected = true
-truncation_length = 4
+only_detached = true
+tag_disabled = false
+tag_symbol = "🏷 "
+disabled = false
 [git_state]
 rebase = "REBASING"
 merge = "MERGING"
@@ -152,7 +144,6 @@ cherry_pick = "🍒 PICKING"
 bisect = "BISECTING"
 am = "AM"
 am_or_rebase = "AM/REBASE"
-progress_divider = "/"
 style = "bold yellow"
 [git_status]
 conflicted = "🏳="
@@ -162,10 +153,7 @@ diverged = "😵⇕"
 untracked = "🤷?"
 stashed = "📦$"
 modified = "📝!"
-staged.value = "++"
-staged.style = "bold green"
-staged_count.enabled = true
-staged_count.style = "bold green"
+staged = '[++\($count\)](bold green)'
 renamed = "👅"
 deleted = "🗑✘"
 
@@ -183,8 +171,7 @@ style = "bold purple"
 # aws
 [aws]
 style = "bold yellow"
-symbol = "🅰 "
-displayed_items = "region"
+symbol = "⛅️"
 [aws.region_aliases]
 #ap-southeast-2 = "au"
 #us-east-1 = "va"
@@ -210,7 +197,6 @@ style = "bold red"
 # terraform
 [terraform]
 symbol = "💠"
-show_version = false
 style = "bold 105"
 
 # Julia

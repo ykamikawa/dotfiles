@@ -13,11 +13,6 @@ alias la='ls -lA'
 alias du='du -kh'
 alias df='df -kTh'
 
-# k8s
-alias k='kubectl'
-alias mn1='kubectl config use-context mn1'
-alias mnj='kubectl config use-context mnj'
-
 # neovim
 alias vim='nvim'
 export XDG_CONFIG_HOME=$HOME/.config
@@ -42,10 +37,27 @@ export PATH=$HOME/.cargo/bin:$PATH
 # browser
 export BROWSER=/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
 
-alias kubectl="pf kubectl"
+# pfutil completion
+source ~/.zsh/pf-completion.zsh
+
+# pfkube
+alias k="pf kubectl"
+alias mn1g2='pf kubectl config use-context mn1g2'
+alias mnjg2='pf kubectl config use-context mnjg2'
 alias pfkube="pf pfkube"
 alias pftaskqueue="pf pftaskqueue"
 alias git-ghost="pf git-ghost"
 alias pfbuild="pf pfbuild"
+alias hdfs="pf hdfs"
+
+# pfkube
+export PFKUBE_DOCKER_ALLOWED_RUNTIME_UID=2379
+export PFKUBE_MNJ_DEFAULT_DOCKER_REGISTRY=harbor.mnj.pfn.io/user-ykamikawa  # This is used when --target-cluster=mnj
+export PFKUBE_MNJ_DEFAULT_DOCKER_CRED_NAME=pfkube-harbor-cred  # This is used when --target-cluster=mnj
+export PFKUBE_MNJ_DEFAULT_GIT_SECRET_NAME=pfkube-git-secret  # This is used when --target-cluster=mnj
+
+export PFKUBE_MN1G2_DEFAULT_DOCKER_REGISTRY=harbor.mnj.pfn.io/user-ykamikawa  # This is used when --target-cluster=mn1g2
+export PFKUBE_MN1G2_DEFAULT_DOCKER_CRED_NAME=pfkube-harbor-cred  # This is used when --target-cluster=mn1g2
+export PFKUBE_MN1G2_DEFAULT_GIT_SECRET_NAME=pfkube-git-secret  # This is used when --target-cluster=mn1g2
 
 eval "$(starship init zsh)"
