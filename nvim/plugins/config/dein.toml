@@ -1,0 +1,142 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo='Shougo/vimproc.vim'
+build='make'
+
+[[plugins]]
+repo = 'voldikss/vim-floaterm'
+hook_add = '''
+source ~/.config/nvim/plugins/vim-floaterm.rc.vim
+'''
+
+[[plugins]]
+repo='Shougo/context_filetype.vim'
+
+[[plugins]]
+repo='osyo-manga/vim-precious'
+depends=['context_filetype.vim']
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'tpope/vim-rhubarb'
+
+[[plugins]]
+repo = 'jlanzarotta/bufexplorer'
+
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+
+[[plugins]]
+repo = 'jiangmiao/auto-pairs'
+
+[[plugins]]
+repo='Townk/vim-autoclose'
+
+[[plugins]]
+repo='Yggdroot/indentLine'
+
+[[plugins]]
+repo='rhysd/accelerated-jk'
+hook_add='''
+nmap j <Plug>(accelerated_jk_gj)
+nmap k <Plug>(accelerated_jk_gk)
+'''
+
+[[plugins]]
+# Yet Another Remote Plugin Framework for Neovim
+repo = 'roxma/nvim-yarp'
+if = '''!has('nvim')'''
+
+[[plugins]]
+repo = 'roxma/vim-hug-neovim-rpc'
+if = '''!has('nvim')'''
+
+[[plugins]]
+repo = 'neovim/python-client'
+if = '''!has('nvim')'''
+
+##############################
+# Dark Power plugins #########
+##############################
+# LSP(Language Server Protocol)
+[[plugins]]
+repo = "neoclide/coc.nvim"
+merged = 0
+rev = "release"
+
+# File explorer
+[[plugins]]
+repo = "Shougo/defx.nvim"
+depends = ['defx-git', 'defx-icons']
+hook_add = """
+source ~/.config/nvim/plugins/defx.rc.vim
+"""
+
+[[plugins]]
+repo = 'kristijanhusak/defx-icons'
+
+[[plugins]] repo ="kristijanhusak/defx-git"
+
+# Asynchronous unite all interfaces
+[[plugins]]
+repo = "Shougo/denite.nvim"
+hook_add = """
+source ~/.config/nvim/plugins/denite.rc.vim
+"""
+
+# Shell interfaces
+[[plugins]]
+repo = "shougo/deol.nvim"
+hook_add = """
+source ~/.config/nvim/plugins/deol.rc.vim
+"""
+
+##############################
+# Theme ######################
+##############################
+[[plugins]]
+repo = "ayu-theme/ayu-vim"
+
+[[plugins]]
+repo = "joshdick/onedark.vim"
+
+[[plugins]]
+repo = "morhetz/gruvbox"
+
+[[plugins]]
+repo = "ulwlu/elly.vim"
+
+[[plugins]]
+repo = "ghifarit53/tokyonight-vim"
+
+[[plugins]]
+repo = 'w0ng/vim-hybrid'
+
+[[plugins]]
+repo = 'dikiapp/minimalist'
+
+# airline
+[[plugins]]
+repo='vim-airline/vim-airline'
+hook_add='''
+" Powerline
+let g:airline_powerline_fonts = 1
+set laststatus=2
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_splits = 1
+let g:airline#extensions#tabline#show_tab_type = 1
+let g:airline#extensions#tabline#show_close_button = 1
+let g:airline_section_z = airline#section#create(['windowswap', '%3p%% ', 'linenr', ':%3v'])
+" gitのHEADから変更した行の+-を非表示
+" let g:airline#extensions#hunks#enabled = 0
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#whitespace#enabled = 1
+'''
+
+[[plugins]]
+repo='vim-airline/vim-airline-themes'
+depends='vim-airline'
