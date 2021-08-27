@@ -2,8 +2,8 @@
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
-repo='Shougo/vimproc.vim'
-build='make'
+repo = 'Shougo/vimproc.vim'
+build = 'make'
 
 [[plugins]]
 repo = 'voldikss/vim-floaterm'
@@ -20,6 +20,15 @@ depends=['context_filetype.vim']
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+
+[[plugins]]
+repo='lambdalisue/gina.vim'
+
+[[plugins]]
+repo = 'preservim/tagbar'
 
 [[plugins]]
 repo = 'tpope/vim-rhubarb'
@@ -58,6 +67,14 @@ if = '''!has('nvim')'''
 [[plugins]]
 repo = 'neovim/python-client'
 if = '''!has('nvim')'''
+
+# preview
+[[plugins]]
+repo='kannokanno/previm'
+
+# browser
+[[plugins]]
+repo='tyru/open-browser.vim'
 
 ##############################
 # Dark Power plugins #########

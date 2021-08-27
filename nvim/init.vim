@@ -17,6 +17,7 @@ runtime! colorscheme.vim
 
 " Enable syntax
 syntax enable
+let g:vimsyn_embed = 'l'
 " Set UTF-8
 set fenc=utf-8
 set encoding=utf-8

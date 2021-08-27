@@ -50,7 +50,7 @@ prompt_order = [
 disabled = false
 use_12hr = false
 style = "dimmed bold yellow"
-#format = "🕙 %T"
+#format = "🕙  %T"
 utc_time_offset = "+9"
 
 # user name
@@ -91,15 +91,15 @@ style = "bold dimmed green"
 truncation_length = 8
 truncate_to_repo = true
 style = "bold cyan"
-read_only = "🔒"
+read_only = "🔒  "
 read_only_style = "red"
 home_symbol = "~"
 
 # battery
 [battery]
-full_symbol = "🔋"
+full_symbol = "🔋 "
 charging_symbol = "⚡️"
-discharging_symbol = "💀"
+discharging_symbol = "💀 "
 disabled = false
 [[battery.display]]
 threshold = 10
@@ -115,7 +115,7 @@ style = "bold dimmed green"
 [memory_usage]
 disabled = false
 threshold = 90
-symbol = "🐏 "
+symbol = "🐏  "
 style = "bold dimmed white"
 
 # jobs
@@ -134,13 +134,13 @@ commit_hash_length = 7
 style = "bold green"
 only_detached = true
 tag_disabled = false
-tag_symbol = "🏷 "
+tag_symbol = "🏷  "
 disabled = false
 [git_state]
 rebase = "REBASING"
 merge = "MERGING"
 revert = "REVERTING"
-cherry_pick = "🍒 PICKING"
+cherry_pick = "🍒  PICKING"
 bisect = "BISECTING"
 am = "AM"
 am_or_rebase = "AM/REBASE"
@@ -164,64 +164,69 @@ style = "bold red"
 
 # Mercurial
 [hg_branch]
-symbol = "🌱 "
+symbol = "🌱  "
 truncation_symbol = "…"
 style = "bold purple"
 
 # aws
 [aws]
 style = "bold yellow"
-symbol = "⛅️"
+symbol = "⛅️  "
 [aws.region_aliases]
 #ap-southeast-2 = "au"
 #us-east-1 = "va"
 
 # docker
 [docker_context]
-symbol = "🐳"
+symbol = "🐳  "
 only_with_files = false
 style = "bold blue"
 
 # kubernetes
 [kubernetes]
-symbol = "⛵"
+symbol = "⛵  "
 style = "bold blue"
 disabled = false
 [kubernetes.context_aliases]
 
+# lua
+[lua]
+symbol = "🌙  "
+style = "bold blue"
+
 # crystal
 [crystal]
-symbol = "🔮"
+symbol = "🔮  "
 style = "bold red"
 
 # terraform
 [terraform]
-symbol = "💠"
+symbol = "💠  "
 style = "bold 105"
 
 # Julia
 [julia]
-symbol = "👸"
+symbol = "👸  "
 style = "bold purple"
 
 # NodeJS
 [nodejs]
-symbol = "🤖"
+symbol = "🤖  "
 style = "bold green"
 
 # PHP
 [php]
-symbol = "🐘"
+symbol = "🐘  "
 style = "bold red"
 
 # Golang
 [golang]
-symbol = "🐹"
+symbol = "🐹  "
 style = "bold syan"
 
 # Python
 [python]
-symbol = "🐍"
+symbol = "🐍  "
 pyenv_version_name = true
 pyenv_prefix = "pyenv "
 style = "bold yellow"
@@ -230,10 +235,15 @@ style = "bold green"
 
 # Ruby
 [ruby]
-symbol = "💎"
+symbol = "💎  "
 style = "bold red"
 
 # Rust
 [rust]
-symbol = "⚙️"
+symbol = "⚙️ "
 style = "bold red"
+
+# Swift
+[swift]
+symbol = "🐦  "
+style = "bold 202"
