@@ -12,11 +12,14 @@ source ~/.config/nvim/plugins/vim-floaterm.rc.vim
 '''
 
 [[plugins]]
-repo='Shougo/context_filetype.vim'
+repo = 'Shougo/context_filetype.vim'
 
 [[plugins]]
-repo='osyo-manga/vim-precious'
+repo = 'osyo-manga/vim-precious'
 depends=['context_filetype.vim']
+
+[[plugins]]
+repo = 'bronson/vim-trailing-whitespace'
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'
@@ -25,7 +28,7 @@ repo = 'tpope/vim-fugitive'
 repo = 'airblade/vim-gitgutter'
 
 [[plugins]]
-repo='lambdalisue/gina.vim'
+repo = 'lambdalisue/gina.vim'
 
 [[plugins]]
 repo = 'preservim/tagbar'
@@ -43,14 +46,14 @@ repo = 'ryanoasis/vim-devicons'
 repo = 'jiangmiao/auto-pairs'
 
 [[plugins]]
-repo='Townk/vim-autoclose'
+repo = 'Townk/vim-autoclose'
 
 [[plugins]]
-repo='Yggdroot/indentLine'
+repo = 'Yggdroot/indentLine'
 
 [[plugins]]
-repo='rhysd/accelerated-jk'
-hook_add='''
+repo = 'rhysd/accelerated-jk'
+hook_add = '''
 nmap j <Plug>(accelerated_jk_gj)
 nmap k <Plug>(accelerated_jk_gk)
 '''
@@ -72,10 +75,6 @@ if = '''!has('nvim')'''
 [[plugins]]
 repo='kannokanno/previm'
 
-# browser
-[[plugins]]
-repo='tyru/open-browser.vim'
-
 ##############################
 # Dark Power plugins #########
 ##############################
@@ -96,7 +95,8 @@ source ~/.config/nvim/plugins/defx.rc.vim
 [[plugins]]
 repo = 'kristijanhusak/defx-icons'
 
-[[plugins]] repo ="kristijanhusak/defx-git"
+[[plugins]]
+repo ="kristijanhusak/defx-git"
 
 # Asynchronous unite all interfaces
 [[plugins]]
@@ -138,8 +138,8 @@ repo = 'dikiapp/minimalist'
 
 # airline
 [[plugins]]
-repo='vim-airline/vim-airline'
-hook_add='''
+repo = 'vim-airline/vim-airline'
+hook_add = '''
 " Powerline
 let g:airline_powerline_fonts = 1
 set laststatus=2
@@ -155,5 +155,5 @@ let g:airline#extensions#whitespace#enabled = 1
 '''
 
 [[plugins]]
-repo='vim-airline/vim-airline-themes'
-depends='vim-airline'
+repo = 'vim-airline/vim-airline-themes'
+depends = 'vim-airline'

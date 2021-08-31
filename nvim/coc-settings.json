@@ -1,5 +1,18 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": ["json", "css", "markdown"],
+  "coc.preferences.formatOnSaveFiletypes": [
+    "json",
+    "css",
+    "yaml",
+    "md",
+    "markdown",
+    "python",
+    "rust",
+    "go",
+    "pfp",
+    "javascript",
+    "typescript",
+    "typescriptreact"
+  ],
   "eslint.autoFixOnSave": true,
   "tsserver.enableJavascript": false,
   "diagnostic.errorSign": "✘",

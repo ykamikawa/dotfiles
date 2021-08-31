@@ -1,18 +1,35 @@
 let g:coc_global_extensions = [
-      \ 'coc-pyright', 
+      \ 'coc-browser',
+      \ 'coc-css',
+      \ 'coc-emmet',
+      \ 'coc-eslint',
+      \ 'coc-explorer',
+      \ 'coc-git',
+      \ 'coc-github',
+      \ 'coc-gitignore',
       \ 'coc-go',
+      \ 'coc-highlight',
+      \ 'coc-html',
+      \ 'coc-json',
+      \ 'coc-lua',
+      \ 'coc-markdownlint',
+      \ 'coc-omni',
+      \ 'coc-omnisharp',
+      \ 'coc-phpls',
+      \ 'coc-prettier',
+      \ 'coc-pyright',
       \ 'coc-rust-analyzer',
+      \ 'coc-sh',
+      \ 'coc-sql',
+      \ 'coc-syntax',
+      \ 'coc-tag',
       \ 'coc-tsserver',
       \ 'coc-tslint-plugin',
-      \ 'coc-emmet',
-      \ 'coc-css',
-      \ 'coc-html',
+      \ 'coc-vimlsp',
+      \ 'coc-vimtex',
+      \ 'coc-xml',
+      \ 'coc-yaml',
       \ 'coc-yank',
-      \ 'coc-prettier',
-      \ 'coc-eslint',
-      \ 'coc-vetur',
-      \ 'coc-json', 
-      \ 'coc-markdownlint',
       \ ]
 
 " if hidden is not set, TextEdit might fail.
@@ -60,9 +77,12 @@ nmap <silent> <C-]> <Plug>(coc-diagnostic-next)
 
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gt <Plug>(coc-declaration)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gu <Plug>(coc-references-used)
+nmap <silent> gb <C-o>
 
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -82,8 +102,8 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 nmap <silent><F2> <Plug>(coc-rename)
 
 " Remap for format selected region
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+xmap <leader>x  <Plug>(coc-format-selected)
+nmap <leader>x  <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!
@@ -118,6 +138,9 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 
 " Add status line support, for integration with other plugin, checkout `:h coc-status`
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
+" For prettier settings
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 " Using CocList
 " Show all diagnostics

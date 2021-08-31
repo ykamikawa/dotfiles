@@ -1,17 +1,33 @@
 [[plugins]]
 repo = 'elzr/vim-json'
 on_ft = ['json']
-hook_add='''
+hook_add = '''
 let g:vim_json_syntax_conceal = 0
 '''
 
 [[plugins]]
-repo = 'groenewege/vim-less'
-on_ft = ['less']
-
-[[plugins]]
 repo = 'stephpy/vim-yaml'
 on_ft = ['yaml']
+
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = ['toml']
+
+[[plugins]]
+repo = 'chrisbra/csv.vim'
+on_ft = ['csv']
+
+[[plugins]]
+repo = 'dag/vim-fish'
+on_ft = ['fish']
+
+[[plugins]]
+repo='Vimjas/vim-python-pep8-indent'
+on_ft = ['python']
+
+[[plugins]]
+repo='fatih/vim-go'
+on_ft=['go']
 
 [[plugins]]
 repo = 'keith/swift.vim'
@@ -30,23 +46,15 @@ repo = 'StanAngeloff/php.vim'
 on_ft = ['php']
 
 [[plugins]]
-repo = 'kchmck/vim-coffee-script'
-on_ft = ['coffee']
-
-[[plugins]]
-repo = 'dag/vim-fish'
-on_ft = ['fish']
-
-[[plugins]]
-repo = 'cespare/vim-toml'
-on_ft = ['toml']
-
-[[plugins]]
 repo = 'yuezk/vim-js'
 on_ft = ['javascript', 'javascript.jsx']
 
 [[plugins]]
 repo = "pangloss/vim-javascript"
+on_ft = ['javascript', 'javascript.jsx']
+
+[[plugins]]
+repo='prettier/vim-prettier'
 on_ft = ['javascript', 'javascript.jsx']
 
 [[plugins]]
@@ -76,3 +84,42 @@ on_ft = ['javascript', 'javascript.jsx']
 [[plugins]]
 repo = 'alampros/vim-styled-jsx'
 on_ft = ['javascript', 'javascript.jsx']
+
+[[plugins]]
+repo = 'kchmck/vim-coffee-script'
+on_ft = ['coffee']
+
+[[plugins]]
+repo = 'lervag/vimtex'
+on_ft = ['tex']
+hook_add = '''
+let g:tex_conceal = ""
+let g:vimtex_view_general_viewer
+      \ = '/Applications/Skim.app/Contents/SharedSupport/displayline'
+let g:vimtex_view_general_options = '-r @line @pdf @tex'
+let g:vimtex_compiler_latexmk = {
+      \ 'background': 1,
+      \ 'build_dir': '',
+      \ 'continuous': 1,
+      \ 'options': [
+      \    '-pdfdvi',
+      \    '-verbose',
+      \    '-file-line-error',
+      \    '-synctex=1',
+      \    '-interaction=nonstopmode',
+      \],
+      \}
+'''
+
+[[plugins]]
+repo = 'plasticboy/vim-markdown'
+on_ft = ['md', 'markdown']
+hook_add = '''
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_conceal = 0
+let g:vim_markdown_conceal_code_blocks = 0
+let g:vim_markdown_math = 1
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_auto_insert_bullets = 0
+let g:vim_markdown_new_list_item_indent = 0
+'''
