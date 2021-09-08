@@ -20,7 +20,7 @@ export XDG_CACHE_HOME=$HOME/.cache
 
 # python
 export PYENV_ROOT=$HOME/.pyenv
-export PATH=$PATH:$PYENV_ROOT/shims:$PYENV_ROOT/bin:$HOME/.local/bin
+export PATH=$PYENV_ROOT/shims:$PYENV_ROOT/bin:$HOME/.local/bin:$PATH
 eval "$(pyenv init -)"
 
 # go
