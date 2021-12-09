@@ -151,7 +151,6 @@ ahead = "🏎⇡💨"
 behind = "😰⇣"
 diverged = "😵⇕"
 untracked = "🤷?"
-stashed = "📦$"
 modified = "📝!"
 staged = '[++\($count\)](bold green)'
 renamed = "👅"

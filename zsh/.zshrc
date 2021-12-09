@@ -42,21 +42,25 @@ source ~/.zsh/pf-completion.zsh
 
 # pfkube
 alias k="pf kubectl"
-alias mn1g2='pf kubectl config use-context mn1g2'
-alias mnjg2='pf kubectl config use-context mnjg2'
 alias pfkube="pf pfkube"
 alias pftaskqueue="pf pftaskqueue"
 alias git-ghost="pf git-ghost"
 alias pfbuild="pf pfbuild"
 alias hdfs="pf hdfs"
+alias docker="pf docker"
+alias gcloud="pf gcloud"
+alias mn1g2='pf kubectl config use-context mn1g2'
+alias mnjg2='pf kubectl config use-context mnjg2'
 
 # pfkube
 export PFKUBE_DOCKER_ALLOWED_RUNTIME_UID=2379
-export PFKUBE_MNJ_DEFAULT_DOCKER_REGISTRY=harbor.mnj.pfn.io/user-ykamikawa  # This is used when --target-cluster=mnj
+# export PFKUBE_MNJ_DEFAULT_DOCKER_REGISTRY=harbor.mnj.pfn.io/user-ykamikawa  # This is used when --target-cluster=mnj
+export PFKUBE_MNJ_DEFAULT_DOCKER_REGISTRY=asia-northeast1-docker.pkg.dev/pfn-artifactregistry/tmp  # This is used when --target-cluster=mnj
 export PFKUBE_MNJ_DEFAULT_DOCKER_CRED_NAME=pfkube-harbor-cred  # This is used when --target-cluster=mnj
 export PFKUBE_MNJ_DEFAULT_GIT_SECRET_NAME=pfkube-git-secret  # This is used when --target-cluster=mnj
 
-export PFKUBE_MN1G2_DEFAULT_DOCKER_REGISTRY=harbor.mnj.pfn.io/user-ykamikawa  # This is used when --target-cluster=mn1g2
+# export PFKUBE_MN1G2_DEFAULT_DOCKER_REGISTRY=harbor.mnj.pfn.io/user-ykamikawa  # This is used when --target-cluster=mn1g2
+export PFKUBE_MN1G2_DEFAULT_DOCKER_REGISTRY=asia-northeast1-docker.pkg.dev/pfn-artifactregistry/tmp  # This is used when --target-cluster=mnj
 export PFKUBE_MN1G2_DEFAULT_DOCKER_CRED_NAME=pfkube-harbor-cred  # This is used when --target-cluster=mn1g2
 export PFKUBE_MN1G2_DEFAULT_GIT_SECRET_NAME=pfkube-git-secret  # This is used when --target-cluster=mn1g2
 
