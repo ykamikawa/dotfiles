@@ -37,6 +37,9 @@ export PATH=$HOME/.cargo/bin:$PATH
 # browser
 export BROWSER=/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
 
+# usr binary
+export PATH=$HOME/.local/bin:$PATH
+
 # pfutil completion
 source ~/.zsh/pf-completion.zsh
 
@@ -65,3 +68,9 @@ export PFKUBE_MN1G2_DEFAULT_DOCKER_CRED_NAME=pfkube-harbor-cred  # This is used 
 export PFKUBE_MN1G2_DEFAULT_GIT_SECRET_NAME=pfkube-git-secret  # This is used when --target-cluster=mn1g2
 
 eval "$(starship init zsh)"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/ykamikawa/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ykamikawa/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/ykamikawa/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ykamikawa/google-cloud-sdk/completion.zsh.inc'; fi
