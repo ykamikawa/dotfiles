@@ -22,6 +22,12 @@ export XDG_CACHE_HOME=$HOME/.cache
 export PYENV_ROOT=$HOME/.pyenv
 export PATH=$PYENV_ROOT/shims:$PYENV_ROOT/bin:$HOME/.local/bin:$PATH
 eval "$(pyenv init -)"
+export LDFLAGS="-L/usr/local/opt/zlib/lib"
+export CPPFLAGS="-I/usr/local/opt/zlib/include"
+export PKG_CONFIG_PATH="/usr/local/opt/zlib/lib/pkgconfig"
+
+# nodejs
+export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 # go
 export GOENV_ROOT=$HOME/.goenv
@@ -43,7 +49,7 @@ export PATH=$HOME/.local/bin:$PATH
 # pfutil completion
 source ~/.zsh/pf-completion.zsh
 
-# pfkube
+# pfutil
 alias k="pf kubectl"
 alias pfkube="pf pfkube"
 alias pftaskqueue="pf pftaskqueue"
