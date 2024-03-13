@@ -13,8 +13,8 @@ ln -s ~/dotfiles/neovim/dein.toml ~/.config/nvim/dein.toml
 # python
 PYENV_ROOT=$HOME/.pyenv
 PATH=$PATH:$PYENV_ROOT/shims:$PYENV_ROOT/bin:$HOME/.local/bin
-pyenv install 3.7.0
-pyenv global 3.7.0
+pyenv install 3.10.0
+pyenv global 3.10.0
 pip install neovim
 
 # go
