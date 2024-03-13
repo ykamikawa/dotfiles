@@ -26,8 +26,10 @@ export LDFLAGS="-L/usr/local/opt/zlib/lib"
 export CPPFLAGS="-I/usr/local/opt/zlib/include"
 export PKG_CONFIG_PATH="/usr/local/opt/zlib/lib/pkgconfig"
 
-# nodejs
-export PATH=$HOME/.nodebrew/current/bin:$PATH
+# nodenv
+export NODENV_ROOT=$HOME/.nodenv
+export PATH=$NODENV_ROOT/bin:$PATH
+eval "$(nodenv init -)"
 
 # go
 export GOENV_ROOT=$HOME/.goenv
