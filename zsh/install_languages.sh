@@ -7,5 +7,5 @@ rm -rf ~/.goenv
 git clone https://github.com/syndbg/goenv.git ~/.goenv
 
 # rust
-curl https://sh.rustup.rs -sSf | sh
-cargo install starship --locked
+# curl https://sh.rustup.rs -sSf | sh
+# cargo install starship --locked
