@@ -55,3 +55,6 @@ if [ -f '/Users/ykamikawa/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ykami
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/ykamikawa/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ykamikawa/google-cloud-sdk/completion.zsh.inc'; fi
+
+# rancher
+export PATH=$HOME/.rd/bin:$PATH
