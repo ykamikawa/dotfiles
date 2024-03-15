@@ -54,8 +54,8 @@ WORKDIR /home/developer
 RUN git clone https://github.com/yyuu/pyenv.git ~/.pyenv
 ENV PATH /home/developer/.pyenv/bin:/home/developer/.pyenv/shims:$PATH
 RUN eval "$(pyenv init --path)" && \
-    pyenv install 3.10.0 && \
-    pyenv global 3.10.0
+    pyenv install 3.11.0 && \
+    pyenv global 3.11.0
 # poetry
 RUN curl -sSL https://install.python-poetry.org | python3 -
 
@@ -79,8 +79,8 @@ ENV PATH="/home/developer/.nodenv/bin:/home/developer/.nodenv/shims:${PATH}"
 
 # nodenv initを実行し、Node.jsをインストールするための新しいRUN命令
 RUN eval "$(nodenv init -)" && \
-    nodenv install 14.17.0 && \
-    nodenv global 14.17.0
+    nodenv install 20.10.0 && \
+    nodenv global 20.10.0
 
 # oh-my-zsh
 RUN sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
