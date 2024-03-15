@@ -12,6 +12,7 @@ RUN apt-get update && apt-get install -y \
     zsh \
     locales \
     build-essential \
+    snapd \
     libssl-dev \
     zlib1g-dev \
     libbz2-dev \
@@ -26,10 +27,13 @@ RUN apt-get update && apt-get install -y \
     libffi-dev \
     liblzma-dev \
     python3-openssl \
-    sudo  # sudoをインストールして、後でユーザーにsudo権限を与える
+    sudo \
+    && rm -rf /var/lib/apt/lists/*
 
-# neovimのインストール
-RUN apt-get install -y neovim
+# Neovim
+RUN curl -L https://github.com/neovim/neovim/releases/download/v0.9.5/nvim-linux64.tar.gz -o nvim.tar.gz
+RUN tar xzvf nvim.tar.gz -C /opt
+RUN ln -s /opt/nvim-linux64/bin/nvim /usr/local/bin/nvim
 
 # ロケールの設定
 RUN locale-gen en_US.UTF-8
@@ -87,13 +91,13 @@ RUN git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.oh-my-zsh/
 # starship
 RUN curl -sS https://starship.rs/install.sh | sh -s -- -y
 
+# Packer.nvim for neovim
+RUN git clone --depth 1 https://github.com/wbthomason/packer.nvim \
+    ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+
 # GitHubから設定ファイル用リポジトリをクローン
 RUN git clone https://github.com/ykamikawa/dotfiles.git ~/dotfiles && \
     git clone https://github.com/ykamikawa/nvim-packer-lsp.git ~/.config/nvim
-
-# Packer.nvim for neovim
-RUN git clone --depth 1 https://github.com/wbthomason/packer.nvim \
-    update~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
 # 設定ファイルを反映
 # .zshrc
