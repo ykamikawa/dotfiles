@@ -27,6 +27,7 @@ RUN apt-get update && apt-get install -y \
     libffi-dev \
     liblzma-dev \
     python3-openssl \
+    libmysqlclient-dev \
     sudo \
     && rm -rf /var/lib/apt/lists/*
 
