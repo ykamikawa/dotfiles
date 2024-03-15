@@ -54,8 +54,8 @@ WORKDIR /home/developer
 RUN git clone https://github.com/yyuu/pyenv.git ~/.pyenv
 ENV PATH /home/developer/.pyenv/bin:/home/developer/.pyenv/shims:$PATH
 RUN eval "$(pyenv init --path)" && \
-    pyenv install 3.11.0 && \
-    pyenv global 3.11.0
+    pyenv install 3.10.0 && \
+    pyenv global 3.10.0
 # poetry
 RUN curl -sSL https://install.python-poetry.org | python3 -
 
