@@ -31,6 +31,19 @@ RUN apt-get update && apt-get install -y \
     sudo \
     && rm -rf /var/lib/apt/lists/*
 
+# Docker のインストール
+RUN apt-get update && \
+    apt-get install -y \
+    apt-transport-https \
+    ca-certificates \
+    software-properties-common \
+    gnupg-agent && \
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - && \
+    add-apt-repository \
+    "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" && \
+    apt-get update && \
+    apt-get install -y docker-ce docker-ce-cli containerd.io
+
 # Neovim
 RUN curl -L https://github.com/neovim/neovim/releases/download/v0.9.5/nvim-linux64.tar.gz -o nvim.tar.gz
 RUN tar xzvf nvim.tar.gz -C /opt
@@ -55,10 +68,10 @@ WORKDIR /home/developer
 RUN git clone https://github.com/yyuu/pyenv.git ~/.pyenv
 ENV PATH /home/developer/.pyenv/bin:/home/developer/.pyenv/shims:$PATH
 RUN eval "$(pyenv init --path)" && \
-    pyenv install 3.10.0 && \
-    pyenv global 3.10.0
+    pyenv install 3.11.3 && \
+    pyenv global 3.11.3
 # poetry
-RUN curl -sSL https://install.python-poetry.org | python3 -
+RUN curl -sSL https://install.python-poetry.org | python3 - --version 1.5.1
 
 # go
 RUN git clone https://github.com/syndbg/goenv.git ~/.goenv && \

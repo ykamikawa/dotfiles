@@ -50,11 +50,15 @@ export PATH=$HOME/.local/bin:$PATH
 
 eval "$(starship init zsh)"
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/ykamikawa/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ykamikawa/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/ykamikawa/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ykamikawa/google-cloud-sdk/completion.zsh.inc'; fi
-
 # rancher
 export PATH=$HOME/.rd/bin:$PATH
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/yuta.kamikawa.002/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/yuta.kamikawa.002/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/yuta.kamikawa.002/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/yuta.kamikawa.002/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/yuta.kamikawa.002/google-cloud-sdk/completion.zsh.inc'; fi
