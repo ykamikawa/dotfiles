@@ -8,6 +8,7 @@ RUN apt-get update && apt-get install -y tzdata
 # 必要なパッケージのインストール
 RUN apt-get update && apt-get install -y \
     curl \
+    file \
     git \
     zsh \
     locales \
@@ -122,12 +123,17 @@ RUN rm ~/.zshrc && ln -s ~/dotfiles/zsh/.zshrc ~/.zshrc
 # starship.toml
 RUN ln -s ~/dotfiles/zsh/starship.toml ~/.config/starship.toml
 
-# mecab(brew)
+# Homebrew
 RUN /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-RUN test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv) && \
-    test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv) && \
-    test -r ~/.zshrc && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.zshrc && \
-    echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.zshrc
+# RUN test -d $HOME/.linuxbrew && eval "$($HOME/.linuxbrew/bin/brew shellenv)"
+# RUN test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+# RUN echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.zshrc
+ENV PATH=$PATH:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin/
+ENV MANPATH="$MANPATH:/home/linuxbrew/.linuxbrew/share/man"
+ENV INFOPATH="$INFOPATH:/home/linuxbrew/.linuxbrew/share/info"
+ENV HOMEBREW_NO_AUTO_UPDATE=1e
+
+# mecab
 RUN brew install mecab mecab-ipadic
 
 # zshをデフォルトシェルとする
