@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y \
     file \
     git \
     zsh \
+    tmux \
     locales \
     build-essential \
     snapd \
@@ -125,9 +126,6 @@ RUN ln -s ~/dotfiles/zsh/starship.toml ~/.config/starship.toml
 
 # Homebrew
 RUN /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-# RUN test -d $HOME/.linuxbrew && eval "$($HOME/.linuxbrew/bin/brew shellenv)"
-# RUN test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-# RUN echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.zshrc
 ENV PATH=$PATH:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin/
 ENV MANPATH="$MANPATH:/home/linuxbrew/.linuxbrew/share/man"
 ENV INFOPATH="$INFOPATH:/home/linuxbrew/.linuxbrew/share/info"
