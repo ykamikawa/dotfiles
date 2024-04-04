@@ -122,5 +122,13 @@ RUN rm ~/.zshrc && ln -s ~/dotfiles/zsh/.zshrc ~/.zshrc
 # starship.toml
 RUN ln -s ~/dotfiles/zsh/starship.toml ~/.config/starship.toml
 
+# mecab(brew)
+RUN /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+RUN test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv) && \
+    test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv) && \
+    test -r ~/.zshrc && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.zshrc && \
+    echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.zshrc
+RUN brew install mecab mecab-ipadic
+
 # zshをデフォルトシェルとする
 CMD ["/bin/zsh"]
