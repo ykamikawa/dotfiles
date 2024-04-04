@@ -61,12 +61,17 @@ ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
 # 開発用ユーザーを作成
-RUN useradd -m -s /bin/zsh developer && \
-    echo "developer ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/developer
+ARG USERNAME=developer
+ARG GROUPNAME=developer
+ARG UID=1006
+ARG GID=1007
+RUN groupadd -g $GID $GROUPNAME && \
+    useradd -m -s /bin/zsh -u $UID -g $GID $USERNAME && \
+    echo "$USERNAME   ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/$USERNAME
 
 # 開発用ユーザーに切り替え
-USER developer
-WORKDIR /home/developer
+USER $USERNAME
+WORKDIR /home/$USERNAME
 
 # 各言語のインストール
 # pyenv
