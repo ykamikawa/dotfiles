@@ -50,17 +50,22 @@ export PATH=$HOME/.local/bin:$PATH
 
 eval "$(starship init zsh)"
 
-# rancher
-export PATH=$HOME/.rd/bin:$PATH
-
-### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/yuta.kamikawa.002/.rd/bin:$PATH"
-### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/yuta.kamikawa.002/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/yuta.kamikawa.002/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/yuta.kamikawa.002/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/yuta.kamikawa.002/google-cloud-sdk/completion.zsh.inc'; fi
-
-alias gc="gcloud compute"
+# # rancher
+# export PATH=$HOME/.rd/bin:$PATH
+# 
+# ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+# export PATH="/Users/yuta.kamikawa.002/.rd/bin:$PATH"
+# ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+# 
+# # The next line updates PATH for the Google Cloud SDK.
+# if [ -f '/Users/yuta.kamikawa.002/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/yuta.kamikawa.002/google-cloud-sdk/path.zsh.inc'; fi
+# 
+# # The next line enables shell command completion for gcloud.
+# if [ -f '/Users/yuta.kamikawa.002/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/yuta.kamikawa.002/google-cloud-sdk/completion.zsh.inc'; fi
+# 
+# alias gc="gcloud compute"
+export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin/
+export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin/
+export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin/
+export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin/
+export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin/
