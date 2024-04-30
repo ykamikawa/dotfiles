@@ -4,6 +4,8 @@
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
 sudo ./aws/install
+rm -rf awscliv2.zip
+rm -rf ./aws
 
 # docker-compose
 curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose && \
@@ -13,6 +15,7 @@ chmod +x /usr/local/bin/docker-compose
 sudo curl -L https://github.com/neovim/neovim/releases/download/v0.9.5/nvim-linux64.tar.gz -o nvim.tar.gz
 sudo tar xzvf nvim.tar.gz -C /opt
 sudo ln -s /opt/nvim-linux64/bin/nvim /usr/local/bin/nvim
+rm -rf nvim.tar.gz
 git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
 # pyenv
@@ -27,9 +30,9 @@ pyenv global 3.11.3
 # poetry
 curl -sSL https://install.python-poetry.org | python3 - --version 1.5.1
 
-# mecab
+# mecab, ripgrep
 sudo apt-get update
-sudo apt-get install -y mecab libmecab-dev mecab-ipadic-utf8
+sudo apt-get install -y mecab libmecab-dev mecab-ipadic-utf8 ripgrep
 
 # goenv
 rm -rf ~/.goenv
@@ -55,7 +58,7 @@ git clone git@github.com:ykamikawa/dotfiles.git ~/dotfiles
 git clone git@github.com:ykamikawa/nvim-packer-lsp ~/nvim-packer-lsp
 
 # zsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-completions ~/.oh-my-zsh/custom/plugins/zsh-completions
