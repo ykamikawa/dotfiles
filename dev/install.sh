@@ -40,8 +40,8 @@ git clone https://github.com/syndbg/goenv.git ~/.goenv
 GOENV_ROOT=~/.goenv
 PATH=$GOENV_ROOT/bin:$PATH
 eval "$(goenv init -)"
-goenv install 1.16.3
-goenv global 1.16.3
+goenv install 1.18.5
+goenv global 1.18.5
 
 # nodenv, node-buildプラグインのインストール
 git clone https://github.com/nodenv/nodenv.git ~/.nodenv
