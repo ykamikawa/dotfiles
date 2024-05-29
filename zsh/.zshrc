@@ -38,9 +38,15 @@ eval "$(goenv init -)"
 alias gobuild="go build -o"
 export PATH=$GOPATH/bin:$PATH
 export LGOPATH=$GOPATH/src/github.com/yunabe/lgo
+# gvm
+[[ -s $HOME/.gvm/scripts/gvm ]] && source $HOME/.gvm/scripts/gvm
 
 # rust
 export PATH=$HOME/.cargo/bin:$PATH
+
+# ruby
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+export PATH="/opt/homebrew/opt/ruby/bin:/opt/homebrew/lib/ruby/gems/3.3.0/bin:$PATH"
 
 # browser
 export BROWSER=/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
@@ -54,13 +60,13 @@ eval "$(starship init zsh)"
 export PATH=$HOME/.rd/bin:$PATH
 
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/yuta.kamikawa.002/.rd/bin:$PATH"
+export PATH="$HOME/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/yuta.kamikawa.002/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/yuta.kamikawa.002/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f $HOME/google-cloud-sdk/path.zsh.inc ]; then . $HOME/google-cloud-sdk/path.zsh.inc; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/yuta.kamikawa.002/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/yuta.kamikawa.002/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f $HOME/google-cloud-sdk/completion.zsh.inc ]; then . $HOME/google-cloud-sdk/completion.zsh.inc; fi
 
 alias gc="gcloud compute"
