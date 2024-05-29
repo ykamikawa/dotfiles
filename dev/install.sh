@@ -27,7 +27,7 @@ eval "$(pyenv init -)"
 sudo apt install -y \
   build-essential libssl-dev  libsqlite3-dev libbz2-dev libgdbm-dev libncurses5-dev \
   libncursesw5-dev libreadline-dev zlib1g-dev libffi-dev liblzma-dev \
-  lua5.3 luarocks
+  imagemagick lua5.3 luarocks
 pyenv install 3.11.3
 pyenv global 3.11.3
 # poetry
@@ -73,4 +73,5 @@ curl -sS https://starship.rs/install.sh | sh
 rm -rf ~/.config/starship.toml
 ln -s ~/dotfiles/zsh/starship.toml ~/.config/starship.toml
 
-cd
+# wezterm
+ln -s ~/dotfiles/wezterm/wezterm.lua ~/.config/wezterm/wezterm.lua
