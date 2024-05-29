@@ -24,7 +24,10 @@ git clone https://github.com/yyuu/pyenv.git ~/.pyenv
 PYENV_ROOT=~/.pyenv
 PATH=$PATH:$PYENV_ROOT/shims:$PYENV_ROOT/bin:~/.local/bin
 eval "$(pyenv init -)"
-sudo apt install -y build-essential libssl-dev  libsqlite3-dev libbz2-dev libgdbm-dev libncurses5-dev libncursesw5-dev libreadline-dev zlib1g-dev libffi-dev liblzma-dev
+sudo apt install -y \
+  build-essential libssl-dev  libsqlite3-dev libbz2-dev libgdbm-dev libncurses5-dev \
+  libncursesw5-dev libreadline-dev zlib1g-dev libffi-dev liblzma-dev \
+  lua5.3 luarocks
 pyenv install 3.11.3
 pyenv global 3.11.3
 # poetry
@@ -69,3 +72,5 @@ ln -s ~/dotfiles/zsh/.zshrc ~/.zshrc
 curl -sS https://starship.rs/install.sh | sh
 rm -rf ~/.config/starship.toml
 ln -s ~/dotfiles/zsh/starship.toml ~/.config/starship.toml
+
+cd
