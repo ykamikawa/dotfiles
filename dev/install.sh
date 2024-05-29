@@ -74,4 +74,5 @@ rm -rf ~/.config/starship.toml
 ln -s ~/dotfiles/zsh/starship.toml ~/.config/starship.toml
 
 # wezterm
+mkdir -p ~/.config/wezterm
 ln -s ~/dotfiles/wezterm/wezterm.lua ~/.config/wezterm/wezterm.lua
