@@ -28,10 +28,12 @@ sudo make install
 sudo ldconfig /usr/local/lib
 cd ..
 rm -rf ImageMagick-7.1.1-33
+rm ImageMagick.tar.gz
 
 # Neovim
 sudo curl -L https://github.com/neovim/neovim/releases/download/v0.9.5/nvim-linux64.tar.gz -o nvim.tar.gz
 sudo tar xzvf nvim.tar.gz -C /opt
+sudo rm /usr/local/bin/nvim
 sudo ln -s /opt/nvim-linux64/bin/nvim /usr/local/bin/nvim
 rm -rf nvim.tar.gz
 git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
