@@ -11,6 +11,24 @@ rm -rf ./aws
 curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose && \
 chmod +x /usr/local/bin/docker-compose
 
+sudo apt update
+sudo apt install -y \
+  build-essential libssl-dev  libsqlite3-dev libbz2-dev libgdbm-dev libncurses5-dev \
+  libncursesw5-dev libreadline-dev zlib1g-dev libffi-dev liblzma-dev \
+  libjpeg-dev libpng-dev libtiff-dev \
+  lua5.1 luarocks
+
+# ImageMagick
+wget https://www.imagemagick.org/download/ImageMagick.tar.gz
+tar xvzf ImageMagick.tar.gz
+cd ImageMagick-7.1.1-33
+./configure
+make
+sudo make install
+sudo ldconfig /usr/local/lib
+cd ..
+rm -rf ImageMagick-7.1.1-33
+
 # Neovim
 sudo curl -L https://github.com/neovim/neovim/releases/download/v0.9.5/nvim-linux64.tar.gz -o nvim.tar.gz
 sudo tar xzvf nvim.tar.gz -C /opt
@@ -24,12 +42,10 @@ git clone https://github.com/yyuu/pyenv.git ~/.pyenv
 PYENV_ROOT=~/.pyenv
 PATH=$PATH:$PYENV_ROOT/shims:$PYENV_ROOT/bin:~/.local/bin
 eval "$(pyenv init -)"
-sudo apt install -y \
-  build-essential libssl-dev  libsqlite3-dev libbz2-dev libgdbm-dev libncurses5-dev \
-  libncursesw5-dev libreadline-dev zlib1g-dev libffi-dev liblzma-dev \
-  imagemagick lua5.3 luarocks
+luarocks --local --lua-version=5.1 install magick
 pyenv install 3.11.3
 pyenv global 3.11.3
+# pip install pynvim jupyter_client jupytext jupyterlab
 # poetry
 curl -sSL https://install.python-poetry.org | python3 - --version 1.5.1
 
