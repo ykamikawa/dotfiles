@@ -13,10 +13,10 @@ chmod +x /usr/local/bin/docker-compose
 
 sudo apt update
 sudo apt install -y \
-  build-essential libssl-dev  libsqlite3-dev libbz2-dev libgdbm-dev libncurses5-dev \
+  build-essential libssl-dev libsqlite3-dev libbz2-dev libgdbm-dev libncurses5-dev \
   libncursesw5-dev libreadline-dev zlib1g-dev libffi-dev liblzma-dev \
   libjpeg-dev libpng-dev libtiff-dev \
-  lua5.1 luarocks
+  lua5.1 luarocks zsh
 
 # ImageMagick
 wget https://www.imagemagick.org/download/ImageMagick.tar.gz
@@ -45,8 +45,8 @@ PYENV_ROOT=~/.pyenv
 PATH=$PATH:$PYENV_ROOT/shims:$PYENV_ROOT/bin:~/.local/bin
 eval "$(pyenv init -)"
 luarocks --local --lua-version=5.1 install magick
-pyenv install 3.11.3
-pyenv global 3.11.3
+pyenv install 3.11.9
+pyenv global 3.11.9
 # pip install pynvim jupyter_client jupytext jupyterlab
 # poetry
 curl -sSL https://install.python-poetry.org | python3 - --version 1.5.1
