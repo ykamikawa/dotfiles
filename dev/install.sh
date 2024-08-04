@@ -18,18 +18,6 @@ sudo apt install -y \
   libjpeg-dev libpng-dev libtiff-dev \
   lua5.1 luarocks zsh
 
-# ImageMagick
-wget https://www.imagemagick.org/download/ImageMagick.tar.gz
-tar xvzf ImageMagick.tar.gz
-cd ImageMagick-7.1.1-33
-./configure
-make
-sudo make install
-sudo ldconfig /usr/local/lib
-cd ..
-rm -rf ImageMagick-7.1.1-33
-rm ImageMagick.tar.gz
-
 # Neovim
 sudo curl -L https://github.com/neovim/neovim/releases/download/v0.9.5/nvim-linux64.tar.gz -o nvim.tar.gz
 sudo tar xzvf nvim.tar.gz -C /opt
