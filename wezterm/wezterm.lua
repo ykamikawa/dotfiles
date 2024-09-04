@@ -8,7 +8,8 @@ if wezterm.config_builder then
 end
 
 config.color_scheme = "Night Owl (Gogh)"
-config.window_background_opacity = 0.80
+config.window_background_opacity = 0.75
+config.text_background_opacity = 1.0
 config.macos_window_background_blur = 20
 config.font = wezterm.font("Hack Nerd Font Mono", { weight = "Regular" })
 config.font_size = 12.0
