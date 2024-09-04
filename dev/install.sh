@@ -59,7 +59,7 @@ mkdir -p ~/.nodenv/plugins && \
 git clone https://github.com/nodenv/node-build.git ~/.nodenv/plugins/node-build
 PATH=~/.nodenv/bin:~/.nodenv/shims:${PATH}
 eval "$(nodenv init -)"
-nodenv install 20.10.0
+nodenv install -y 20.10.0
 nodenv global 20.10.0
 
 # Clone dotfiles and nvim settings
@@ -80,5 +80,6 @@ rm -rf ~/.config/starship.toml
 ln -s ~/dotfiles/zsh/starship.toml ~/.config/starship.toml
 
 # wezterm
+rm -rf ~/.config/wezterm/wezterm.lua
 mkdir -p ~/.config/wezterm
 ln -s ~/dotfiles/wezterm/wezterm.lua ~/.config/wezterm/wezterm.lua
