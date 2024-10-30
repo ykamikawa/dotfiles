@@ -9,22 +9,21 @@ rm -rf ./aws
 
 # docker-compose
 curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose &&
-	chmod +x /usr/local/bin/docker-compose
+  chmod +x /usr/local/bin/docker-compose
 
 sudo apt update
 sudo apt install -y \
-	build-essential libssl-dev libsqlite3-dev libbz2-dev libgdbm-dev libncurses5-dev \
-	libncursesw5-dev libreadline-dev zlib1g-dev libffi-dev liblzma-dev \
-	libjpeg-dev libpng-dev libtiff-dev \
-	lua5.1 luarocks zsh
+  build-essential libssl-dev libsqlite3-dev libbz2-dev libgdbm-dev libncurses5-dev \
+  libncursesw5-dev libreadline-dev zlib1g-dev libffi-dev liblzma-dev \
+  libjpeg-dev libpng-dev libtiff-dev \
+  lua5.1 luarocks zsh
 
 # Neovim
-sudo curl -L https://github.com/neovim/neovim/releases/download/v0.9.5/nvim-linux64.tar.gz -o nvim.tar.gz
+sudo curl -L https://github.com/neovim/neovim/releases/download/v0.10.1/nvim-linux64.tar.gz -o nvim.tar.gz
 sudo tar xzvf nvim.tar.gz -C /opt
 sudo rm /usr/local/bin/nvim
 sudo ln -s /opt/nvim-linux64/bin/nvim /usr/local/bin/nvim
 rm -rf nvim.tar.gz
-git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
 # pyenv
 rm -rf ~/.pyenv
@@ -52,8 +51,8 @@ goenv global 1.18.5
 # nodenv, node-buildプラグインのインストール
 git clone https://github.com/nodenv/nodenv.git ~/.nodenv
 cd ~/.nodenv && src/configure && make -C src &&
-	mkdir -p ~/.nodenv/plugins &&
-	git clone https://github.com/nodenv/node-build.git ~/.nodenv/plugins/node-build
+  mkdir -p ~/.nodenv/plugins &&
+  git clone https://github.com/nodenv/node-build.git ~/.nodenv/plugins/node-build
 PATH=~/.nodenv/bin:~/.nodenv/shims:${PATH}
 eval "$(nodenv init -)"
 nodenv install 20.10.0
@@ -61,7 +60,7 @@ nodenv global 20.10.0
 
 # Clone dotfiles and nvim settings
 git clone git@github.com:ykamikawa/dotfiles.git ~/dotfiles
-git clone git@github.com:ykamikawa/nvim-packer-lsp ~/nvim-packer-lsp
+git clone git@github.com:ykamikawa/nvim ~/nvim
 
 # zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -80,3 +79,7 @@ ln -s ~/dotfiles/zsh/starship.toml ~/.config/starship.toml
 rm -rf ~/.config/wezterm/wezterm.lua
 mkdir -p ~/.config/wezterm
 ln -s ~/dotfiles/wezterm/wezterm.lua ~/.config/wezterm/wezterm.lua
+
+# neovim
+rm -rf ~/.config/nvim
+ln -s ~/nvim ~/.config/nvim
