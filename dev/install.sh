@@ -70,11 +70,6 @@ git clone https://github.com/zsh-users/zsh-completions ~/.oh-my-zsh/custom/plugi
 rm -rf ~/.zshrc
 ln -s ~/dotfiles/zsh/.zshrc ~/.zshrc
 
-# starship
-curl -sS https://starship.rs/install.sh | sh
-rm -rf ~/.config/starship.toml
-ln -s ~/dotfiles/zsh/starship.toml ~/.config/starship.toml
-
 # wezterm
 rm -rf ~/.config/wezterm/wezterm.lua
 mkdir -p ~/.config/wezterm
@@ -83,3 +78,9 @@ ln -s ~/dotfiles/wezterm/wezterm.lua ~/.config/wezterm/wezterm.lua
 # neovim
 rm -rf ~/.config/nvim
 ln -s ~/nvim ~/.config/nvim
+
+# starship
+curl -sS https://starship.rs/install.sh | sh
+rm -rf ~/.config/starship.toml
+ln -s ~/dotfiles/zsh/starship.toml ~/.config/starship.toml
+
